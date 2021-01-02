@@ -1,0 +1,27 @@
+<!--pages/mine_index/mine_index.wxml-->
+<view class="container">
+    <view class="nav">
+      <van-row>
+        <van-col span="8">
+        <view bindtap="goto_minexinxi">
+          <image src="../../images/info.png" mode="widthFix"></image>
+          <text>我的信息</text>
+        </view>
+        </van-col>
+        <van-col  span="8">
+          <view bindtap="goto_mineorder">
+            <image src="../../images/order.png" mode="widthFix"></image>
+            <text>我的订单</text>
+          </view>
+        </van-col>
+        <van-col span="8">
+         <image src="../../images/address.png" mode="widthFix"></image>
+         <text>我的地址</text>
+        </van-col>
+         <van-col span="8">
+         <image src="../../images/dongtai.png" mode="widthFix"></image>
+         <text>我的佣金</text>
+        </van-col>
+      </van-row>
+    </view>
+</view>

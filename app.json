@@ -1,16 +1,25 @@
 {
   "pages": [
-    "pages/card/card",
-    "pages/webview/webview",
+    
     "pages/index/index",
+    "pages/editcard/editcard",
+    "pages/orderdetail/orderdetail",
+    "pages/confirmorder/confirmorder",
+    "pages/shoppingcart/shoppingcart",
+    "pages/myorder/myorder",
+    "pages/goodsdetail/goodsdetail",
+    "pages/shopping_index/shopping_index",
+    "pages/mine_index/mine_index",
+    "pages/mine_xinxi/mine_xinxi",
+    
     "pages/logs/logs",
-    "pages/site/site",
-    "pages/my/my"
+    "pages/apply/apply"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "获客通",
+    "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -18,44 +27,44 @@
     "selectedColor": "#1989fa",
     "list": [
       {
-        "pagePath": "pages/card/card",
+        "pagePath": "pages/index/index",
         "text": "名片",
-        "iconPath": "/images/tabBar/card.png",
-        "selectedIconPath": "/images/tabBar/card.png"
+        "iconPath": "/images/cardicon.png",
+        "selectedIconPath": "/images/cardicon.png"
       },
       {
-        "pagePath": "pages/card/card",
+        "pagePath": "pages/index/index",
+        "text": "消息",
+        "iconPath": "/images/xinxiicon.png",
+        "selectedIconPath": "/images/xinxiicon.png"
+      },
+      {
+        "pagePath": "pages/shopping_index/shopping_index",
         "text": "商城",
-        "iconPath": "/images/tabBar/shop.png",
-        "selectedIconPath": "/images/tabBar/shop.png"
+        "iconPath": "/images/shopicon.png",
+        "selectedIconPath": "/images/shopicon.png"
       },
       {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "/images/tabBar/my.png",
-        "selectedIconPath": "/images/tabBar/my.png"
-      },
-      {
-        "pagePath": "pages/site/site",
+        "pagePath": "pages/index/index",
         "text": "官网",
-        "iconPath": "/images/tabBar/site.png",
-        "selectedIconPath": "/images/tabBar/site.png"
+        "iconPath": "/images/guanwang.png",
+        "selectedIconPath": "/images/guanwang.png"
       }
     ]
   },
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
-    "van-button": "@vant/weapp/button/index",
-    "van-icon": "@vant/weapp/icon/index",
-    "van-col": "@vant/weapp/col/index",
-    "van-field": "@vant/weapp/field/index",
-    "van-goods-action": "@vant/weapp/goods-action/index",
-    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
-    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
-    "van-popup": "@vant/weapp/popup/index",
-    "van-tab": "@vant/weapp/tab/index",
-    "van-tabs": "@vant/weapp/tabs/index",
-    "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+    "van-button": "miniprogram_npm/vant-weapp/button/index",
+    "van-icon": "miniprogram_npm/vant-weapp/icon/index",
+    "van-col": "miniprogram_npm/vant-weapp/col/index",
+    "van-field": "miniprogram_npm/vant-weapp/field/index",
+    "van-goods-action": "miniprogram_npm/vant-weapp/goods-action/index",
+    "van-goods-action-icon": "miniprogram_npm/vant-weapp/goods-action-icon/index",
+    "van-goods-action-button": "miniprogram_npm/vant-weapp/goods-action-button/index",
+    "van-popup": "miniprogram_npm/vant-weapp/popup/index",
+    "van-tab": "miniprogram_npm/vant-weapp/tab/index",
+    "van-tabs": "miniprogram_npm/vant-weapp/tabs/index",
+    "van-checkbox": "miniprogram_npm/vant-weapp/checkbox/index",
+    "van-checkbox-group": "miniprogram_npm/vant-weapp/checkbox-group/index"
   }
 }

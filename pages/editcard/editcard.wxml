@@ -1,0 +1,124 @@
+<!--pages/editcard.wxml-->
+<view class="container">
+    <view class="card">
+      <view class="touxiang">
+        <view class="notupload">
+         
+          <image src="../../images/img_notupload.png" class="cardinfobg"></image>
+           <text>头像未上传</text>
+        </view>
+       <view class="upload hidden" >
+        <image src="../../images/touxiang.png"></image>
+        </view>
+      </view>
+      <view class="cardinfo">
+          <image src="../../images/cardbg_1.png" class="cardinfobg"></image>
+         
+          <view class="infotext">
+            <text class="card_companyname cl">上海聚怡信息技术有限公司</text>
+            <view class="card_user cl">
+              <text class="card_username">周冬雨</text>
+              <text class="card_jobtitle">销售顾问</text>
+            </view> 
+            <view class="phone cl"><van-icon name="phone" /><text>电话未填写</text></view>
+            <view class="mail cl"><van-icon name="invition" /><text>邮箱未填写</text></view>
+            <view class="location cl"><van-icon name="location" /><text>地址未填写</text></view>
+          </view>
+      </view>
+    </view>
+   <!-- 信息部分开始 -->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class="labeltit">基本信息</view>
+  <view class = "info">
+    <!-- 姓名部分 -->
+    <view class = "item  cl">
+      <text class="tit">公司</text>
+      <view class = "right">
+      <input type="text" name = "name" placeholder="上海聚怡信息技术有限公司"/>
+      </view>
+    </view>
+    <!-- 电话部分 -->
+    <view class = "item  cl">
+      <text  class="tit">电话</text>
+      <view class = "right">
+      <input name="mobile" type="number" placeholder="13148407990" />
+      </view>
+    </view>
+    <!-- 微信 -->
+    <view class = "item  cl">
+      <text  class="tit">微信</text>
+      <view class = "right">
+        <input name="mobile" type="number" placeholder="请填写" />
+      </view>
+    </view>
+    <!-- 邮箱 -->
+    <view class = "item  cl">
+      <text  class="tit">邮箱</text>
+      <view class = "right">
+      <input name="mobile" type="number" placeholder="fon@jue.sh" />
+      </view>
+    </view>
+    <!-- 详细地址部分 -->
+    <view class = "item  cl">
+      <text  class="tit">详细地址</text>
+      <view class = "right">
+      <input name="room_number" type="text" placeholder="请输入" />
+      </view>
+    </view>
+
+  </view>
+  <view class="labeltit">个人简介</view>
+  <view class="info">
+    <textarea bindblur="bindTextAreaBlur" auto-height placeholder="你还没有个人简介~~~请完善资料奥" />
+  </view>
+  <view class="labeltit">上传视频</view>
+  <view class="info">
+    <view class="page-body-info">
+      <block wx:if="{{src === ''}}">
+          <view class="image-plus image-plus-nb" bindtap="chooseVideo">
+          <view class="image-plus-horizontal"></view>
+          <view class="image-plus-vertical"></view>
+        </view>
+        <view class="image-plus-text">
+        <image src='../../images/uploadvideo.png'></image></view>
+      </block>
+      <block wx:if="{{src != ''}}">
+        <video src="{{src}}" class="video"></video>
+      </block>
+    </view>
+  </view>
+   <view class="labeltit">我的标签</view>
+   <view class="info">
+    <view class="labellist cl">
+      <view class="minelabel">
+       <text>标签内容</text> 
+      <image src="../../images/close.png"  class="delete"/>
+      </view>
+      <view class="minelabel">
+         <text>标签内容</text> 
+        <image src="../../images/close.png"  class="delete"/>
+      </view>
+      <view class="minelabel cl">
+        <image src="../../images/addicon.png"  class="add"/>
+        <text>添加标签</text> 
+      </view>
+    </view>
+  </view>
+   <view class="labeltit">我的图片</view>
+   <view class="info">
+      <view class='justify-content-start cl' wx:if="{{pics}}">
+          <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
+             <image src='{{item}}' class="uploader-img"  data-index="{{index}}" mode="scaleToFill" bindtap='previewImg1'/>
+             <image class='delete' data-index="{{index}}" src='../../../images/icon10.png' mode="widthFix" bindtap='deleteImg'/>
+          </view>
+        </view>
+        <view class='upAdd' bindtap='chooseImg'>
+          <image src='../../images/addicon2.png' mode="widthFix"/>
+          <text>点击上传</text>
+        </view>
+   </view>
+<!-- 信息部分结束 -->
+  <button class = "save {{saveactive?'active':''}}" formType="submit" >保存</button>
+</form>
+     
+</view>

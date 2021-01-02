@@ -1,0 +1,7 @@
+/* pages/mine_index/mine_index.wxss */
+page{ min-height: 100%;background:#f0f0f0 ;}
+.container {padding-top: 20rpx; min-height: 100%;}
+.nav{ border-left: #f0f0f0 1px solid;border-top: #f0f0f0 1px solid;}
+van-row .van-col{ border-right: #f0f0f0 1px solid;border-bottom: #f0f0f0 1px solid; text-align: center; background: #fff;}
+van-row .van-col image{ width:80rpx ; display: block; margin:40rpx auto 0}
+.nav text { font-size: 27rpx; line-height: 80rpx;display: block; margin-bottom: 30rpx; }

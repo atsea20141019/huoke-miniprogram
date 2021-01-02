@@ -1,0 +1,31 @@
+<!--pages/mine-xinxi/mine_xinxi.wxml-->
+<view class="container">
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class = "info">
+    <!-- 部分 -->
+    <view class = "touxiangline  cl">
+        <view class="userinfo cl" >
+        <view class="userinfo-avatar">
+          <open-data type="userAvatarUrl" ></open-data>
+        </view>
+        <!--<open-data type="userNickName" class="userinfo-nickname"></open-data>-->
+      </view>
+       <text class="tit">头像</text>
+    </view>
+    <!-- 电话部分 -->
+    <view class = "item  cl">
+      <text class="tit">姓名</text>
+      <view class = "right">
+      <input type="text" name = "name" placeholder="{{name}}" value="{{name_value}}" bindinput="getinput_name"/>
+      </view>
+    </view>
+    <view class = "item  cl">
+      <text class="tit">电话</text>
+      <view class = "right">
+      <input type="text" name = "name" placeholder="{{phone}}" value="{{name_value}}" bindinput="get_phone"/>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
+      </view>
+    </view>
+    </view>
+    </form>
+    </view>

@@ -1,0 +1,67 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<view class="container">
+    <view class="swiperContainer">
+      <swiper bindchange="swiperChange"  autoplay="{{autoplay}}"  duration="{{duration}}" >
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item wx:key="*this">
+            <image src="{{item}}" class="slide-image"  class='img'  />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="imageCount">{{current+1}}/{{imgUrls.length}}</view>
+    </view>
+    <view class="goodsinfo cl">
+      <text class="title">大幅度发大幅度大幅度发大幅度大幅度发大幅度大幅度发大幅度{{item.title}}</text>
+      <view class="price">￥<text>55 {{item.price}} </text></view>
+      <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+      <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >月销：2{{item.num}}</text>
+    </view>
+    <view class="attribute" bindtap="showPopup">
+      <text>已选</text>
+      <text class="select">便携式空调除臭器,</text>
+      <text class="select_num">1件</text>
+      <image src="../../images/arr_down.png" class="arr_down"></image>
+    </view>
+    <view class="detail">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介{{item.detail}}</view>
+    
+    <van-goods-action>
+      <van-goods-action-icon icon="cart-o" text="购物车" info="5" bind:click="onClick_gwc" />
+      <van-goods-action-button text="加入购物车" type="warning"  bind:click="onClick_gwc" class="jr_gwc" />
+      <van-goods-action-button text="立即购买"  bind:click="onClick_buy" class="ljgm"/>
+    </van-goods-action>
+    <van-popup
+      show="{{ show }}"
+      position="bottom"
+      custom-style="height: 55%"
+      >
+        <image src="../../images/close.png" class="closebtn" bindtap="onClose"></image>
+        <view class="goodsattribute">
+          <view class="goodsshow cl">
+            <image src="../../images/pic4.jpg" ></image>
+            <view class="currprice cl">
+              <view class="price">秒杀价 ￥<text>55 {{item.price}} </text></view>
+              <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+            </view>
+          </view>
+          <view class="attributeshow">
+            <view class="titel">尺寸</view>
+            <view class="attributelist cl">
+              <text>空调清洗机</text>
+              <text>空调清洗机2</text>
+              <text>空调清洗机3热热</text>
+              <text>空调清洗机4</text>
+            </view>
+          </view>
+        </view>
+        <view class="goodsnum">
+          <text  class="titel">数量</text>
+          <view class="jisuannum">
+            <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+            <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+            <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+           </view>
+        </view>
+         <van-button type="info" bindtap="sureselect" >确认</van-button>
+      </van-popup>
+</view>
+

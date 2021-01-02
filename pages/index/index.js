@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
+    menubuttontop: 0,
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -16,6 +16,9 @@ Page({
     })
   },
   onLoad: function () {
+    wx.setTabBarBadge({index: 1,text: '2'});
+    var jiaonangdata = wx.getMenuButtonBoundingClientRect();
+    this.setData({menubuttontop:jiaonangdata.top})
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -49,6 +52,16 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+  gotoeditcard:function(){
+    wx.navigateTo({
+      url: '../editcard/editcard'
+    })
+  },
+  gotomineindex:function(){
+    wx.navigateTo({
+      url: '../mine_index/mine_index'
     })
   }
 })

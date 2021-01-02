@@ -1,0 +1,59 @@
+/* pages/editcard.wxss */
+.container{ background-color:#f0f0f0 ; padding-top: 20rpx;}
+.card {color:#606060 ; background:#000 ; margin:0 20rpx 20rpx 20rpx; border-radius: 10rpx; position: relative ;}
+.card .touxiang{ position: absolute; left:0; top:0; height: 100%; width: 360rpx;}
+.card .touxiang .notupload{ position: absolute; left: 80rpx; top:25%; text-align: center;}
+.card .touxiang .notupload image{ width: 100rpx; height:100rpx ;}
+.card .touxiang .notupload text{ font-size: small; color: #fff;  display: block;}
+.card .touxiang .upload image{ width: 360rpx; height: 100%; border-radius: 10rpx;}
+.card .cardinfo{ position: relative; width: 100%;}
+.card .cardinfo image.cardinfobg{ width: 100%; height: 100%; display: block; position: absolute; left: 0; top:0; z-index: 2; border-radius: 10rpx;}
+.card .van-icon{ color:#606060}
+.card .infotext{ position: relative; right: 0; top:0; z-index: 3;padding: 20rpx 20rpx 50rpx 0; }
+.card .infotext .card_companyname{ font-size: 28rpx; display: block; text-align: right;}
+.card .infotext .card_user{ margin-left: 50%; font-size: x-small; padding: 50rpx 20rpx 50rpx 0;display: block; }
+.card .infotext .card_user .card_username{ font-size: large; font-weight: bold; color:#000; margin-right: 10rpx;}
+.card .infotext .card_user .card_jobtitle{ }
+.card .infotext .card_user .card_jobtitle{font-size: small; }
+.card .infotext .phone{ margin-left: 50%;}
+.card .infotext .mail{ margin-left: 50%;}
+.card .infotext .location{ margin-left: 50%; max-width: 375rpx; text-overflow: ellipsis; white-space: nowrap;
+  overflow: hidden;}
+.card .infotext .phone text,.card .infotext .mail text,.card .infotext .location text{font-size: small;}
+.card .infotext .phone van-icon,.card .infotext .mail van-icon,.card .infotext .location van-icon{ position: relative; top:8rpx;}
+
+form{ width: 100%;}
+form .labeltit{ height:90rpx ; line-height: 90rpx; padding-left: 20rpx;}
+.info{
+  background-color: #fff; padding: 20rpx; position: relative;
+}
+.image-plus{ width: 100%; height:300rpx ; position: absolute; left: 0; top:0}
+.item{
+  height:90rpx;
+  align-items: center;
+  border-bottom:1rpx solid #eee; font-size: small;
+}
+.item .tit{ float: left; display: inline; width: 25%;  line-height:90rpx;}
+.item .right{
+  width:75%;
+  display:inline;
+  float: left;
+  line-height:60rpx; padding: 15rpx 0;
+}
+input{
+  width:100%; line-height:60rpx; height: 60rpx;  text-align: right;
+}
+textarea{ width:710rpx ; min-height: 200rpx; font-size: small;}
+.labellist .minelabel{ border: #ccc 1px solid; border-radius: 3rpx; line-height: 60rpx; height: 60rpx; color: #333; position:relative;  float: left; display: inline; background-color: #fff; margin-right: 20rpx; color: #333; padding: 0 20rpx; text-align: center;} 
+.labellist .minelabel image.delete{ width: 40rpx; height: 40rpx; position: absolute; right: -15rpx; top:-15rpx;}
+.labellist .minelabel text{ font-size: small;}
+.labellist .minelabel image.add{ width: 40rpx; height: 40rpx; position: relative; top:10rpx}
+.upAdd { width:200rpx ;height:200rpx ; border: #aaa 1px dashed; text-align: center; background: #f0f0f0;}
+.upAdd  image{ width: 50rpx !important; height: 50rpx  !important; display: block; margin:50rpx auto 0}
+.upAdd text{ display: block; color:#aaa; font-size: small;}
+.image-plus-text{ border: #ccc 1px solid; border-radius: 5rpx; padding:100rpx 0 100rpx 0; text-align: center;}
+.image-plus-text image{ width: 60rpx; height: 60rpx;}
+
+.uploader-list{ float: left; display: inline; width:200rpx ;height:200rpx ; float: left; display: inline; position: relative; margin-right: 10rpx;}
+.uploader-list .uploader-img{ width:200rpx ;height:200rpx ;}
+.uploader-list image.delete{width: 40rpx; height: 40rpx; position: absolute; right: -15rpx; top:-15rpx;}

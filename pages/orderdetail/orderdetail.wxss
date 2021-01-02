@@ -1,0 +1,30 @@
+/* pages/orderdetail/orderdetail.wxss */
+page{ height: 100%;background:#f0f0f0 ;}
+.ordertips{ background: #fd5867; color: #fff; padding: 30rpx 20rpx;}
+.ordertips .orderstate{ float: left; display: inline; width: 200rpx;}
+.ordertips .tips{ float: right; display: inline; width: 490rpx; font-size: small;}
+.goodslist{}
+.goodslist .goodsline{ background: #fff; margin:20rpx 0; padding: 20rpx; position: relative;}
+.goodslist .goodsline image{ width:180rpx ; height: 180rpx; float: left; display: inline;}
+.goodslist .goodsline .goodsinfo{ float: right; display: inline; width: 450rpx; font-size: small;}
+.goodslist .goodsline .goodsinfo  .title{ height:120rpx ; line-height: 40rpx; display: block; margin-bottom: 20rpx;}
+.goodslist .goodsline .goodsinfo .price{ float: left; display: inline;line-height: 40rpx; }
+.goodslist .goodsline .goodsinfo .number{ float: right; display: inline;line-height: 40rpx; }
+.orderinfo{ background: #fff; padding: 20rpx;}
+.orderinfo .orderline{ line-height: 40rpx; display: block; margin-bottom: 20rpx;}
+.orderinfo .orderline label{ float: left; display: inline;}
+.orderinfo .orderline text{ float: right; color: #999;}
+.orderinfo .ordertotal{ border-top: #f0f0f0 1px solid; padding-top: 20rpx; font-weight: bold; }
+.orderinfo .ordertotal text{ color:#ff0000}
+.otherdetail{ margin-top:20rpx; background: #fff; padding: 20rpx; font-size: small; color:#999; margin-bottom: 100rpx;}
+.otherdetail .msg_item{ line-height: 40rpx; margin-bottom: 15rpx;}
+.otherdetail .msg_item .label{ float: left; display: inline;}
+.otherdetail .msg_item .msg_value{ float: left;display: inline;}
+.otherdetail .msg_item .copybtn{ border:#ccc 1px solid; border-radius: 5rpx; float: left ; display: inline; padding: 0 10rpx; margin-left: 10rpx;}
+.payflag{ background: #fff; padding:30rpx; height: 40rpx ; position: fixed; right: 0; bottom:0; width: 690rpx; border-top: #ccc 1px solid;}
+.payflag .van-checkbox{ margin-left:60rpx}
+.payflag .totalprice{ float: right; margin-right: 230rpx;}
+.payflag .totalprice text{ color: #dd0000; font-size: large;}
+.payflag van-button{ position: absolute; right: 0; top:0; height: 100rpx;}
+.payflag van-button button{ height: 100rpx; line-height: 100rpx; padding: 0 55rpx !important;}
+.payflag text{padding-right: 20rpx;}

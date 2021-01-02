@@ -1,21 +1,100 @@
 /**index.wxss**/
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 25rpx; position: absolute; left:0; top:0;
 }
-
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+  float:left;
+  overflow: hidden;
+  margin-left: 20rpx;
 }
-
 .userinfo-nickname {
-  color: #aaa;
+  color: #333; float: left; display: inline; line-height: 50rpx; font-size: small;
 }
+.usercentertitle{
+  color: #333; position: absolute; left:80rpx; padding-top: 25rpx;  line-height: 50rpx; font-size: small;
+}
+.pagetitle{ width: 100%; text-align: center; line-height:90rpx; font-size:small ; }
+.main{ background:#f0f0f0 ; padding-top: 20rpx;}
+.card {color:#606060 ; background:#000 ; margin:0 20rpx 20rpx 20rpx; border-radius: 10rpx; position: relative ; font-size: small;}
+.card .touxiang{ position: absolute; left:0; top:0; height: 100%; width: 360rpx;}
+.card .touxiang image{ width: 360rpx; height: 100%; border-radius: 10rpx;}
+.card .cardinfo{ position: relative; width: 100%;}
+.card .cardinfo image.cardinfobg{ width: 100%; height: 100%; display: block; position: absolute; left: 0; top:0; z-index: 2; border-radius: 10rpx;}
+.card .van-icon{ color:#909090}
+.card .infotext{ position: relative; right: 0; top:0; z-index: 3;padding: 20rpx 20rpx 50rpx 0; }
+.card .infotext .card_companyname{ font-size: 28rpx; display: block; text-align: right; font-size: small;}
+.card .infotext .card_user{ margin-left: 50%; font-size: x-small; padding: 50rpx 20rpx 50rpx 0;display: block; }
+.card .infotext .card_user .card_username{ font-size: large; color:#000; margin-right: 10rpx ; font-weight: bold;} 
+.card .infotext .card_user .card_jobtitle{ }
+.card .infotext .card_user .card_jobtitle{font-size: small; }
+.card .infotext .phone{ margin-left: 50%; margin-bottom: 5rpx;}
+.card .infotext .mail{ margin-left: 50%; margin-bottom: 5rpx;}
+.card .infotext .location{ margin-left: 50%; max-width: 375rpx; text-overflow: ellipsis; white-space: nowrap;
+  overflow: hidden; margin-bottom: 5rpx;}
+.card .infotext .phone text,.card .infotext .mail text,.card .infotext .location text{font-size: small; margin-left: 5rpx;}
+.card .infotext .phone van-icon,.card .infotext .mail van-icon,.card .infotext .location van-icon{ position: relative; top:5rpx;}
 
-.usermotto {
-  margin-top: 200px;
+.contactinfo {
+ white-space: nowrap;
+ display: flex; flex-direction:row; 
+ padding:10rpx 0 30rpx 0;
+
 }
+.contactinfo .col{
+  display: inline-block;
+  background: #fff;
+  border-radius: 5rpx;
+  border: #F0F0F0 1px solid;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+   padding:20rpx;
+}
+.contactinfo .col view{ font-size: small; color: #000; font-weight: bold;}
+.contactinfo .col van-icon{ position: relative; top:5rpx}
+.contactinfo .col text{ font-size: small; color:#606060; margin-right: 10rpx;}
+.buttons{ padding:0 0 40rpx 20rpx;}
+.buttons button{ width: 340rpx;border-radius: 50rpx;}
+.buttons van-button.normal{ margin-left: 30rpx;}
+.buttons .van-button{ height:85rpx; line-height: 81rpx;}
+.personal_profile{ background: #fff;padding: 20rpx;}
+.personal_profile .title{ display: block; margin-bottom: 20rpx; font-size: medium;}
+.personal_profile .title image{ position: relative; top:5rpx; width: 47rpx; height:39rpx ; float: left; display: inline;}
+
+.personal_profile .con{  font-size:small; color: #606060; margin-bottom: 30rpx; line-height: 40rpx;}
+
+.labelcol{ float: left; display: inline; border:1px solid #1989fa; border-radius: 10rpx; color:#1989fa; line-height: 55rpx; padding:0 10rpx; height: 55rpx; overflow: hidden; margin:0 15rpx 15rpx 0;font-size: 32rpx; box-shadow: 0px 1px 2px 0px #1989fa;}
+.labelcol .labelname{float: left; display: inline; margin-right: 10rpx; font-size: small; }
+.labelcol .zan_num{color:#FA6400; font-size: small;}
+.labelname image{ width: 38rpx; height: 37rpx; position: relative; top:8rpx; margin-right: 10rpx;}
+.flag{margin:20rpx; }
+.flag image{ width: 100%;}
+.videobox{ background: #fff;}
+.videobox  .title{ display: block; padding: 20rpx;}
+.videobox .title image{ position: relative; top:5rpx; width: 47rpx; height:39rpx ; float: left; display: inline;}
+.videobox .con{  font-size:30rpx; color: #606060; margin-bottom: 30rpx;}
+.videobox .con{ padding: 0 20rpx;}
+.videobox .con video{ width:100% ;}
+
+.recommendbox{ background: #fff;}
+.recommendbox  .title{ display: block; font-size: 34rpx; padding: 20rpx;}
+.recommendbox .title image{ position: relative; top:8rpx; width: 47rpx; height:39rpx ;}
+.recommendbox .con{  font-size:30rpx; color: #606060; margin-bottom: 30rpx; padding: 0 0 0 20rpx; width: 730rpx;}
+.recommendbox .con .col{ float: left; display: inline; width: 345rpx; margin-right: 20rpx; }
+.recommendbox .con .col image { width: 100%;}
+.recommendbox .con .col text{height: 70rpx; line-height:50rpx ; display: block; text-align: center; font-size:26rpx; max-width: 345rpx; text-overflow: ellipsis; white-space: nowrap;
+  overflow: hidden;}
+.picturebox{ background: #fff;}
+.picturebox  .title{ display: block; font-size: 34rpx; padding: 20rpx;}
+.picturebox .title image{ position: relative; top:5rpx; width: 47rpx; height:39rpx ;}
+.picturebox .con{  font-size:30rpx; color: #606060; margin-bottom: 30rpx; padding: 0 0 0 20rpx; width: 730rpx;}
+.picturebox .con .col{ float: left; display: inline; width: 220rpx; margin-right: 20rpx; }
+.picturebox .con .col image { width: 100%;}
+.picturebox .con .col text{height: 70rpx; line-height:50rpx ; display: block; text-align: center;font-size: 26rpx; max-width: 375rpx; text-overflow: ellipsis; white-space: nowrap;
+  overflow: hidden;}
+
+.buttons2{ padding:0 0 40rpx 20rpx;}
+.buttons2 button{ width: 710rpx;border-radius: 50rpx;margin-bottom: 20rpx;}
+.buttons2 .van-button{ height: 85rpx; line-height: 81rpx;}

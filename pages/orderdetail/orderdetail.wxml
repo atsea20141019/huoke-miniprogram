@@ -1,0 +1,61 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view class="ordertips cl">
+  <text class="orderstate">等待买家付款</text>
+  <text class="tips">请在5小时内完成支付，逾期未支付，订单将自动取消</text>
+</view>
+<view class="goodslist">
+  <view class="goodsline cl">
+      <image src="../../images/pic4.jpg"></image>
+      <view class="goodsinfo">
+          <view class="title">东风标致新车 新车定金</view>
+          <view class="price">￥ 1000.00</view>
+           <view class="number">× 1件</view>
+      </view>
+  </view>
+  <view class="goodsline cl">
+      <image src="../../images/pic4.jpg"></image>
+      <view class="goodsinfo">
+          <view class="title">东风标致新车 新车定金</view>
+          <view class="price">￥ 1000.00</view>
+           <view class="number">× 1件</view>
+      </view>
+  </view>
+</view>
+ <view class="orderinfo">
+    <view class="orderline cl">
+      <label>买家留言</label>
+       <text>别弄错了</text>
+    </view>
+    <view class="orderline cl">
+      <label>商品金额</label>
+      <text>￥ 1000.00</text>
+    </view>
+    <view class="orderline cl">
+      <label>运费</label>
+       <text>￥ 10.00</text>
+    </view>
+     <view class="orderline ordertotal cl">
+      <label>订单总计</label>
+       <text>￥ 3920.00</text>
+    </view>
+ </view>
+<view class="otherdetail">
+   <view class="msg_item cl">
+          <view class="label">订单编号：</view>
+          <view class="msg_value">eeer28394394830493043</view>
+          <view class="copybtn"  bindtap='copyText' data-text="{{orderNo}}">复制</view>
+      </view>
+      <view class="msg_item cl">
+          <view class="label">下单时间：</view>
+          <view class="msg_value">2020-43-34 34343</view>
+      </view>
+      <view class="msg_item cl">
+          <view class="label">订单状态：</view>
+           <view class="msg_value">待付款</view>
+      </view>
+</view>
+  <view class="payflag">
+      <text>更多商品</text>
+      <text>取消订单</text>
+      <van-button square type="primary" color="#ee0000">继续支付</van-button>
+  </view>

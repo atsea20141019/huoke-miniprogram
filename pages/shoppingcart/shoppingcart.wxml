@@ -1,0 +1,105 @@
+<!--pages/shoppingcart/shoppingcart.wxml-->
+<view class="container">
+  <view class="editbtns cl">
+    <view class="edit" bindtap="editshoppingcart">编辑商品</view>
+    <view class="complete hidden" bindtap="completeshoppingcart">完成</view>
+  </view>
+  
+  <view class="shoppingcartlist">
+    <van-checkbox-group value="{{ result }}" bind:change="oncheckboxChange">
+        <view class="cartline cl">
+          <van-checkbox checked-color="#ff0000" name="a"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="cartline cl">
+           <van-checkbox checked-color="#ff0000" name="b"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="cartline cl">
+          <van-checkbox checked-color="#ff0000" name="c"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="cartline cl">
+           <van-checkbox checked-color="#ff0000" name="d"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="cartline cl">
+           <van-checkbox checked-color="#ff0000" name="e"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="cartline cl">
+           <van-checkbox checked-color="#ff0000" name="f"></van-checkbox>
+          <image src="../../images/pic4.jpg"></image>
+          <view class="goodsinfo">
+            <view class="title">东风标致新车 新车定金</view>
+            <view class="attribute">已选属性</view>
+            <view class="price">￥ 1000.00</view>
+            <view class="jisuannum">
+                  <view class="btn {{item.addactive ? 'btn added active' : 'btn'}} "  hover-class="adding" data-product_spec_id="{{item.product_spec_id}}"  data-p_allow_addcart="{{item.p_allow_addcart}}"     data-imgsrc='{{item.imgsrc}}'  bindtap='{{canaddOrder?"addOrder":""}}' data-id="{{item.p_id}}" data-price="{{item.price}}" data-title="{{item.title}}" data-index="{{index}}">+</view>
+                  <view class="btn reducebtn {{item.p_sku_attr_num>1?'':'active'}}" style="{{item.num==0 ? 'display:none' : ''}}" hover-class="reduceing"   data-p_sku_attr_num="{{item.p_sku_attr_num}}" data-cart_id="{{item.cart_id}}" data-s_id="{{item.s_id}}"  data-u_id="{{item.u_id}}"  data-p_attr_id="" data-p_sku_id="{{item.product_spec_id}}"  bindtap='{{item.p_sku_attr_num>1?"":"reduceOrder"}}' data-p_id="{{item.p_id}}" data-is_oper="0"  data-index="{{index}}">-</view>
+                  <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >11{{item.num}}</text>
+            </view>
+          </view>
+        </view>
+    </van-checkbox-group>
+  </view>
+  <view class="jiesuanflag">
+     <view class="totalprice">总计：<text>￥ 1000.00</text></view>
+    <van-checkbox checked-color="#ff0000" value="{{ checked }}" bind:change="onChange">全选</van-checkbox>
+    <van-button square type="primary" color="#ee0000">结算</van-button>
+  </view>
+  <view class="deleteflag" >
+    <van-checkbox checked-color="#ff0000" value="{{ checked }}" bind:change="onChange">全选</van-checkbox>
+    <van-button square type="primary" color="#ee0000">删除</van-button>
+  </view>
+</view>

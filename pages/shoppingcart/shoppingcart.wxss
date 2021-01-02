@@ -1,0 +1,33 @@
+/* pages/shoppingcart/shoppingcart.wxss */
+page{ height: 100%;background:#f0f0f0 ;}
+.container{ overflow-y: auto;}
+.shoppingcartlist{ padding-bottom: 110rpx;}
+.editbtns{ background: #fff; line-height: 40rpx; height: 40rpx; display: block; padding:0 20rpx 20rpx 0;}
+.editbtns .edit{ float: right;display: inline;}
+.editbtns .complete{ float: right;display: inline;}
+.cartline{ background: #fff; margin:20rpx 0; padding: 20rpx; position: relative;}
+.cartline image{ width:180rpx ; height: 180rpx; float: left; display: inline;}
+.cartline .goodsinfo{ float: right; display: inline; width: 450rpx; font-size: small;}
+.cartline .van-checkbox{ float: left; display: inline; position: relative; top:70rpx; margin-right: 20rpx;}
+.goodsnum{font-size: small; border-top: #f0f0f0 1px solid; padding: 20rpx;}
+.goodsinfo .title{line-height: 40rpx; max-height: 80rpx;}
+.goodsinfo .attribute{}
+.goodsinfo .price{ position: absolute; left: 280rpx; bottom: 20rpx; line-height:50rpx ; color: #ff8a00;}
+.goodsinfo .jisuannum{ border:#eee 1px solid; position: absolute; right: 20rpx; bottom: 20rpx; width: 204rpx; height: 50rpx; line-height: 50rpx; font-size: large; text-align: center;}
+.goodsinfo .jisuannum .btn{ width: 50rpx; height:50rpx; text-align: center; float: right; color:#ccc}
+.goodsinfo .jisuannum .btn.active{ color:#333}
+.goodsinfo .jisuannum .added{}
+.goodsinfo .jisuannum .reducebtn{ float: left;}
+.goodsinfo .jisuannum .number{float: left; border-right:#eee 1px solid ;border-left:#eee 1px solid ; width: 100rpx; display: inline; overflow: hidden; font-size: small;}
+.jiesuanflag{ background: #fff; padding:30rpx; height: 40rpx ; position: fixed; right: 0; bottom:0; width: 100%; border-top: #ccc 1px solid;}
+.jiesuanflag .van-checkbox{ margin-left:60rpx}
+.jiesuanflag .totalprice{ float: right; margin-right: 180rpx;}
+.jiesuanflag .totalprice text{ color: #dd0000; font-size: large;}
+.jiesuanflag van-button{ position: absolute; right: 0; top:0; height: 100rpx;}
+.jiesuanflag van-button button{ height: 100rpx; line-height: 100rpx; padding: 0 55rpx !important;}
+
+.deleteflag{ background: #fff; padding:30rpx; height: 40rpx ; position: fixed; right: 0; bottom:0; width: 100%; border-top: #ccc 1px solid;}
+.deleteflag .van-checkbox{ margin-left:60rpx}
+.deleteflag van-button{ position: absolute; right: 0; top:0; height: 100rpx;}
+.deleteflag van-button button{ height: 100rpx; line-height: 100rpx; padding: 0 55rpx !important;}
+

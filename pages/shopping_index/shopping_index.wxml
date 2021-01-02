@@ -1,0 +1,112 @@
+<!--pages/shopping/shopping_index.wxml-->
+<view class="container">
+  <!--轮播-->
+    <swiper indicator-active-color='#fff'  indicator-dots="true">
+        <block wx:for="{{imgs}}" wx:for-index="index" wx:key="swiperItem" wx:for-item="item" >
+          <swiper-item class="swiper-items"  >
+            <image class="swiper-image" src="{{item}}" mode="widthFix"></image>
+            <button class="button-img" bindtap="start" wx:if="{{index == imgs.length - 1}}" >立即体验</button>
+          </swiper-item>
+        </block>
+    </swiper>
+  <!--轮播结束-->
+    <!-- tab导航栏 -->
+    <!-- scroll-left属性可以控制滚动条位置 -->
+    <!-- scroll-with-animation滚动添加动画过渡 -->
+    <view class="shopmain">
+      <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+          <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+              <view class="nav-item {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.text}}</view>
+          </block>        
+      </scroll-view>
+      <!-- 页面内容 -->
+        <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+                  <view class="scrollview">
+                    <view class="item" bindtap="showgoodsdetail">
+                        <image src="../../images/pic2.png" ></image>
+                        <view class="dc_con">
+                          <text class="title">大幅度发大幅度大幅度发大幅度大幅度发大幅度大幅度发大幅度{{item.title}}</text>
+                          <text class="detail">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介{{item.detail}}</text>
+                          <view class="price">￥<text>55 {{item.price}} </text></view>
+                          <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+                          <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >月销：2{{item.num}}</text>
+                      </view>
+                    </view>
+                    <view class="item">
+                        <image src="../../images/pic2.png" ></image>
+                        <view class="dc_con">
+                          <text class="title">大幅度发大幅度大幅度发大幅度大幅度发大幅度大幅度发大幅度{{item.title}}</text>
+                          <text class="detail">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介{{item.detail}}</text>
+                          <view class="price">￥<text>55 {{item.price}} </text></view>
+                          <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+                          <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >月销：2{{item.num}}</text>
+                      </view>
+                    </view>
+                    <view class="item">
+                        <image src="../../images/pic2.png" ></image>
+                        <view class="dc_con">
+                          <text class="title">大幅度发大幅度大幅度发大幅度大幅度发大幅度大幅度发大幅度{{item.title}}</text>
+                          <text class="detail">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介{{item.detail}}</text>
+                          <view class="price">￥<text>55 {{item.price}} </text></view>
+                          <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+                          <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >月销：2{{item.num}}</text>
+                      </view>
+                    </view>
+                    <view class="item">
+                        <image src="../../images/pic2.png" ></image>
+                        <view class="dc_con">
+                          <text class="title">大幅度发大幅度大幅度发大幅度大幅度发大幅度大幅度发大幅度{{item.title}}</text>
+                          <text class="detail">商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介商品简介{{item.detail}}</text>
+                          <view class="price">￥<text>55 {{item.price}} </text></view>
+                          <view class="original_price">￥<text>78 {{item.price}}</text> </view>
+                          <text class="number"  style="{{item.num==0 ? 'display:none' : ''}}" >月销：2{{item.num}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+              2 吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+              3 吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+                4吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+              5 吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+              6 吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+                7吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+                8吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+            <swiper-item  class="tab-content">
+                <scroll-view scroll-y="true">
+              9 吴带当风的放的是辅导费
+                </scroll-view>
+            </swiper-item>
+        </swiper>
+      </view>
+</view>

@@ -1,0 +1,28 @@
+/* pages/confirmorder/confirmorder.wxss */
+page{ height: 100%;background:#f0f0f0 ;}
+.cartline{ background: #fff; margin:20rpx 0; padding: 20rpx; position: relative;}
+.cartline image{ width:180rpx ; height: 180rpx; float: left; display: inline;}
+.cartline .goodsinfo{ float: right; display: inline; width: 490rpx; font-size: small;}
+.cartline .van-checkbox{ float: left; display: inline; position: relative; top:70rpx; margin-right: 20rpx;}
+.goodsnum{font-size: small; border-top: #f0f0f0 1px solid; padding: 20rpx;}
+.goodsinfo .title{line-height: 40rpx; max-height: 80rpx;}
+.goodsinfo .attribute{}
+.goodsinfo .price{ position: absolute; left: 240rpx; bottom: 20rpx; line-height:50rpx ; color: #ff8a00;}
+.goodsinfo .jisuannum{ border:#eee 1px solid; position: absolute; right: 20rpx; bottom: 20rpx; width: 204rpx; height: 50rpx; line-height: 50rpx; font-size: large; text-align: center;}
+.goodsinfo .jisuannum .btn{ width: 50rpx; height:50rpx; text-align: center; float: right; color:#ccc}
+.goodsinfo .jisuannum .btn.active{ color:#333}
+.goodsinfo .jisuannum .added{}
+.goodsinfo .jisuannum .reducebtn{ float: left;}
+.goodsinfo .jisuannum .number{float: left; border-right:#eee 1px solid ;border-left:#eee 1px solid ; width: 100rpx; display: inline; overflow: hidden; font-size: small;}
+.orderinfo{ background:#fff ; padding-top: 20rpx;}
+.orderinfo .orderline{font-size: small; padding: 0 30rpx; height: 50rpx; line-height: 50rpx;}
+.orderinfo .orderline label{ float: left; display: inline;}
+.orderinfo .orderline input{ width:500rpx ; float: right; display: inline;}
+.orderinfo .orderline text{ float: right; display: inline; color: #666;}
+.orderinfo .ordertotal{ font-size: medium; border-top: #f0f0f0 1px solid; line-height: 80rpx; height: 80rpx; margin-top:15rpx}
+.payflag{ background: #fff; padding:30rpx; height: 40rpx ; position: fixed; right: 0; bottom:0; width: 100%; border-top: #ccc 1px solid;}
+.payflag .van-checkbox{ margin-left:60rpx}
+.payflag .totalprice{ float: right; margin-right: 230rpx;}
+.payflag .totalprice text{ color: #dd0000; font-size: large;}
+.payflag van-button{ position: absolute; right: 0; top:0; height: 100rpx;}
+.payflag van-button button{ height: 100rpx; line-height: 100rpx; padding: 0 55rpx !important;}

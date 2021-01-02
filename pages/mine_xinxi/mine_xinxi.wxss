@@ -1,0 +1,44 @@
+/* pages/mine-xinxi/mine_xinxi.wxss */
+page{ min-height: 100%;background:#f0f0f0 ;background:#f0f0f0 ;}
+.container { min-height: 100%;}
+form{ width: 100%;}
+form .labeltit{ height:90rpx ; line-height: 90rpx; padding-left: 20rpx;}
+.userinfo {
+  padding:15rpx 20rpx;
+  float: right;
+}
+.userinfo-avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 30rpx;
+  float:left;
+  overflow: hidden;
+  margin-left: 20rpx;
+}
+.userinfo-nickname {
+  color: #333; float: left; display: inline; line-height: 50rpx; font-size: small;
+}
+.info{
+}
+.touxiangline{
+  margin:20rpx 0; background-color: #fff;
+}
+.touxiangline .tit{ line-height:90rpx ; padding-left: 20rpx; font-size:small ;}
+.item{
+   background: #fff;
+  height:90rpx;
+  align-items: center;
+  border-bottom:1rpx solid #eee; font-size: small;
+  padding-left: 20rpx;
+}
+.item .tit{ float: left; display: inline; width: 25%;  line-height:90rpx; }
+.item .right{
+  width:75%;
+  display:inline;
+  float: left;
+  line-height:60rpx; padding: 15rpx 0;
+   text-align: right; 
+}
+input{
+  width:calc(100% - 20rpx); line-height:60rpx; height: 60rpx; 
+}

@@ -1,0 +1,31 @@
+/* pages/myorder/myorder.wxss */
+page{ min-height: 100%;background:#f0f0f0 ;}
+.van-tab{flex-basis:20% !important}
+.orderli{ padding-bottom: 300rpx;}
+.cont_count{background: #fff; padding: 0 ; margin: 20rpx 0 0 ; position: relative;}
+.cont_count_top{ padding: 20rpx 0;}
+.cont_count .goodsimage{ width: 150rpx; height: 150rpx; background:#fff ; float: left; display: inline;}
+.cont_count .goodsimage image{width: 150rpx; height: 150rpx; }
+.cont_count .orderstate{ line-height: 40rpx; float: left; display: inline; margin-left: 30rpx;}
+.cont_count  .arr_right image{ width: 35rpx; height:35rpx; float: right; display: inline;margin-right: 30rpx;}
+.orderlist{ width: cale(100%-60rpx); background:#fafafa;  margin:0 0 20rpx 0;padding:30rpx 30rpx 10rpx 30rpx; }
+.orderlist .goodshow{ margin-bottom:20rpx;}
+.orderlist .goods_info {width:520rpx; text-align: left; float: right; color:#666;}
+.orderlist .goods_info .title{ line-height: 40rpx; height: 80rpx; color:#666; display: block ; font-size: small;}
+
+
+.orderlist .goods_info .number{
+  display:block;
+  float:right;
+  margin:15rpx 0 0 0;
+  height: 50rpx;
+  line-height:45rpx ;
+  text-align: center;
+  font-size: small;
+}
+.order_number{ float: left; display: inline; margin-left: 20rpx;}
+.order_money{ float: right; display: inline; margin-right: 20rpx;}
+.cont_count .orderbtns{  width: 100%; margin-top: 15rpx; border-top:#f0f0f0 1px solid; padding-top: 20rpx; font-size: small; }
+.cont_count .orderbtns button{ padding: 0 28rpx; height: 60rpx;line-height: 60rpx; border-radius: 40rpx; float: right ; display: inline; width: auto ;  font-weight: normal; background-color: white; margin-right: 20rpx; font-size: small;}
+.cont_count .orderbtns button.cancle_btn{ border: #ccc 1px solid; color:#999999}
+.cont_count .orderbtns button.pay_btn{ border: #D8AA7A 1px solid; color:#D2432F}

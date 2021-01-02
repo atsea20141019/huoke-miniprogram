@@ -1,0 +1,55 @@
+<!--pages/myorder/myorder.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <view>
+      <!--订单列表 -->
+      <view wx:if="{{orderlist.length>0}}" class=' order_bg'>
+        <view class="orderli">
+          <view class='cont_count cl'  wx:key="key" >
+            <view  bindtap="showorderdetail" class="cont_count_top cl">
+              <view class="orderstate">已付款</view>
+              <view class="arr_right" bindtap="gotoorderdetail">
+                <image src="../../images/arr_right.png"></image>
+              </view>
+            </view>
+            <view class='orderlist'  >
+              <view class="goodshow cl">
+                <view class="goodsimage"><image src="../../images/pic4.jpg"></image></view>
+                <view class="goods_info cl">
+                      <text class="title">东风东风东风东风东风东风东风东风东风</text>
+                      <text class="number">×1件</text>
+                </view>
+              </view>
+              <view class="goodshow cl">
+                <view class="goodsimage"><image src="../../images/pic4.jpg"></image></view>
+                <view class="goods_info cl">
+                      <text class="title">东风东风东风东风东风东风东风东风东风</text>
+                      <text class="number">×1件</text>
+                </view>
+              </view>
+            </view>
+            <view class="cl">
+                    <label class='order_money'>合计：￥<text>1000</text> </label>
+                    <text class='order_number'>共5件</text>
+            </view>
+            <view class="orderbtns cl " >
+               <van-button round type="info" color="#7232dd" plain bindtap="payorder">去支付</van-button>
+               <van-button round type="info" color="#666" plain  bindtap="cancelorder">取消订单</van-button>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:else>
+      
+        <view class='nocont_count'>
+          <image class="noorderimg" src="../../images/noorder.png"></image>
+          <label class='none_tab'>快去下一单吧~</label>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+  <van-tab title="待付款">内容 2</van-tab>
+  <van-tab title="待发货">内容 3</van-tab>
+  <van-tab title="待收货">内容 4</van-tab>
+   <van-tab title="已完成">内容 4</van-tab>
+</van-tabs>

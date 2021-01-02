@@ -1,5 +1,5 @@
 {
-  "name": "huoke-miniprogram3",
+  "name": "huoketong",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.6.4"
+    "vant-weapp": "^0.5.28"
   }
 }

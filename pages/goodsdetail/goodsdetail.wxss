@@ -1,0 +1,125 @@
+/* pages/goodsdetail/goodsdetail.wxss */
+page{ height: 100%;background:#f0f0f0 ;}
+.container{
+  height: 100%;
+  overflow-y: auto;
+}
+.swiperContainer {
+  position: relative;
+}
+swiper{ height:700rpx ;}
+.swiperContainer image{ width: 100%; height: 700rpx; overflow: hidden;}
+
+
+.imageCount {
+  width:120rpx;
+  height:50rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius:40rpx;
+  line-height:50rpx;
+  color:#fff;
+  text-align:center;
+  font-size:26rpx;
+  position:absolute;
+  right:13px;
+  bottom:20rpx;
+}
+.goodsinfo{ background: #fff; padding: 20rpx;}
+.goodsinfo .title{
+  line-height: 35rpx;
+  height: 70rpx;
+  overflow: hidden;
+  display: block;
+  font-size: small;
+
+}
+.attribute{
+  background: #fff;
+  padding: 20rpx; margin-top: 20rpx;
+}
+.attribute .arr_down{ width: 25rpx; height: 25rpx; float: right; position: relative; top:10rpx}
+.attribute text{ margin-right: 15rpx; font-size: small;}
+.attribute text.select,.attribute text.select_num{ color: #999;}
+.detail{
+  color:#333;
+  font-size: small;
+   line-height: 40rpx;
+   margin-top: 20rpx;
+    overflow: hidden;
+    background: #fff;
+    padding: 20rpx ;
+    margin-bottom: 160rpx;
+}
+.goodsinfo .detail text{  display: inline;font-size: small; float: left;}
+.goodsinfo .price{
+  color:#ff8a00;
+  font-size:18px;
+  float: left;
+  font-size: small;
+   padding-top:20rpx;
+   margin-right:15rpx ;
+   line-height: 40rpx;
+}
+.goodsinfo .original_price{
+  color:#ccc;
+  float: left;
+  font-size: small;
+  padding-top: 20rpx;
+  text-decoration: line-through;
+   font-weight: normal;
+   line-height: 40rpx;
+}
+.goodsinfo .price text{ display: inline; font-size: large;}
+.goodsinfo .original_price text{ display: inline; font-size: medium;}
+.goodsinfo .number{
+  display:block;
+  float:right;
+  margin:20rpx 5px 0 0;
+  font-size:small;
+  color:#ccc;
+  height: 50rpx;
+  line-height:45rpx ;
+  text-align: center;
+}
+.van-goods-action{ background:#fff ; padding: 20rpx;}
+.jr_gwc .van-button--warning{border-top-left-radius:50rpx;border-bottom-left-radius:50rpx}
+.ljgm .van-button--danger{border-top-right-radius:50rpx;border-bottom-right-radius:50rpx}
+.van-popup image.closebtn{ width: 60rpx; height: 60rpx; position: absolute; right:20rpx ; top:20rpx }
+.goodsattribute{ padding: 20rpx;}
+.goodsattribute .goodsshow{ margin-bottom: 30rpx;}
+.goodsattribute .goodsshow image{ width:180rpx ; height: 180rpx; float: left; display:inline; margin-right: 20rpx;}
+.goodsattribute .goodsshow .currprice{ float: left; display:inline; padding-top: 110rpx;}
+.goodsattribute .goodsshow .price{
+  color:#ff8a00;
+  font-size:18px;
+  float: left;
+  font-size: small;
+   padding-top:20rpx;
+   margin-right:15rpx ;
+   line-height: 40rpx;
+}
+.goodsattribute .goodsshow .original_price{
+  color:#ccc;
+  float: left;
+  font-size: small;
+  padding-top: 20rpx;
+  text-decoration: line-through;
+   font-weight: normal;
+   line-height: 40rpx;
+}
+.goodsattribute .goodsshow .price text{ display: inline; font-size: large;}
+.goodsattribute .goodsshow .original_price text{ display: inline; font-size: medium;}
+.attributelist text{ background: #f0f0f0; line-height: 30rpx; height: 30rpx; border-radius: 25rpx; float: left; display: inline; padding: 10rpx 25rpx; margin:10rpx 20rpx 0 0;}
+.attributelist text.active{ background: ;}
+.attributeshow{ font-size: small;}
+.attributeshow .title{line-height: 40rpx; height: 40rpx;}
+.goodsnum{font-size: small; border-top: #f0f0f0 1px solid; padding: 20rpx;}
+.goodsnum .title{line-height: 40rpx; height: 40rpx;}
+.goodsnum .jisuannum{ border:#eee 1px solid; float: right; display: inline; width: 204rpx; height: 50rpx; line-height: 50rpx; font-size: large; text-align: center;}
+.goodsnum .jisuannum .btn{ width: 50rpx; height:50rpx; text-align: center; float: right; color:#ccc}
+.goodsnum .jisuannum .btn.active{ color:#333}
+.goodsnum .jisuannum .added{}
+.goodsnum .jisuannum .reducebtn{ float: left;}
+.goodsnum .jisuannum .number{float: left; border-right:#eee 1px solid ;border-left:#eee 1px solid ; width: 100rpx; display: inline; overflow: hidden; font-size: small;}
+.van-popup button{ width: 710rpx;border-radius: 50rpx;margin:30rpx 20rpx; background: #ff8a00; border:#ff8a00 1px solid}
+.van-popup .van-button{ height: 90rpx; line-height: 86rpx;}

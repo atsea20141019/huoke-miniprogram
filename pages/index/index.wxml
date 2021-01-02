@@ -1,13 +1,172 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="header-container  " style="padding-top:{{menubuttontop}}px">
+    <view class="userinfo cl"  style="top:{{menubuttontop}}px">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl" ></open-data>
+      </view>
+      <!--<open-data type="userNickName" class="userinfo-nickname"></open-data>-->
+    </view>
+    <view class="usercentertitle" style="top:{{menubuttontop}}px" bindtap="gotomineindex">我的</view>
+    <view class="pagetitle">周冬雨的名片</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="main">
+    <view class="card">
+      <view class="touxiang">
+        <image src="../../images/touxiang.png"></image>
+      </view>
+      <view class="cardinfo">
+          <image src="../../images/cardbg_1.png" class="cardinfobg"></image>
+          <view class="infotext">
+            <text class="card_companyname cl">上海聚怡信息技术有限公司</text>
+            <view class="card_user cl">
+              <text class="card_username">周冬雨</text>
+              <text class="card_jobtitle">销售顾问</text>
+            </view> 
+            <view class="phone cl"><van-icon name="phone" /><text>13148407990</text></view>
+            <view class="mail cl"><van-icon name="invition" /><text>fon@juyir.com</text></view>
+            <view class="location cl"><van-icon name="location" /><text>上海市徐汇区田林东路75号</text></view>
+          </view>
+        </view>
+      </view>
+    <scroll-view class="contactinfo cl" scroll-x>
+          <view class="col">
+          <view><text class="iconfont icongongsiguanli"></text>公司</view>
+          <text>上海聚怡信息技术有限公司</text>
+          </view>
+          <view class="col">
+          <view><van-icon name="phone-o" />电话</view>
+          <text>13148407990</text>
+          </view>
+          <view class="col">
+          <view><text class="iconfont iconweixin"></text>微信</view>
+          <text>nipaocom</text>
+          </view>
+          <view class="col">
+           <view><text class="iconfont iconmail1"></text>邮箱</view>
+          <text>fon@juyir.com</text>
+          </view>
+     
+    </scroll-view>
+    <view  class="buttons cl">
+      <van-button type="info">分享名片</van-button>
+      <van-button plain  type="info" class="normal">保存到通讯录</van-button>
+    </view>
+    <view class="personal_profile">
+      <view class="title"><image src="../../images/personal_profile.png"></image>个人简介</view>
+      <view class="con">
+        您好：欢迎光临苏州众和东风标致店，我是丁丁，有买新车、续保、二手车置换、用车方面有用得着我的地方，您滴一声，欢迎留言，感谢(✪▽✪)
+      </view>
+      <view class="label cl">
+          <view class="labelcol">
+           <view class="labelname">
+            <image src="../../images/zanicon.png"></image>
+            <text>和蔼可亲</text>
+           </view>
+          <text class="zan_num">(99)</text>
+          </view>
+          <view class="labelcol">
+          
+           <view class="labelname">
+            <image src="../../images/zanicon.png"></image>
+           聪明美丽
+           </view>
+          <text class="zan_num">(199)</text>
+          </view>
+          <view class="labelcol">
+           <view class="labelname">
+           <image src="../../images/zanicon.png"></image>
+           厉害
+           </view>
+          <text class="zan_num">(99)</text>
+          </view>
+      </view>
+     
+    </view>
+     <view class="flag">
+        <image src="../../images/flag.png" mode="widthFix"></image>
+      </view>
+      <view class="videobox">
+        <view class="title">
+           <image src="../../images/videoicon.png" ></image>
+           视频展示
+        </view>
+        <view class="con">
+          <video 
+      id="myVideo" 
+      src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" 
+      binderror="videoErrorCallback" 
+      danmu-list="{{danmuList}}" 
+      enable-danmu 
+      danmu-btn 
+      show-center-play-btn='{{false}}' 
+      show-play-btn="{{true}}" 
+      controls
+      picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'
+    ></video>
+        </view>
+      </view>
+      <view class="recommendbox">
+        <view class="title">
+           <image src="../../images/recommend.png" ></image>
+           推荐商品
+        </view>
+        <view class="con cl">
+          <view class="col">
+            <image src="../../images/pic1.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic1.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic1.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic1.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+        </view>
+      </view>
+       <view class="picturebox">
+        <view class="title">
+           <image src="../../images/picture.png" ></image>
+           我的图片
+        </view>
+        <view class="con cl">
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+           <view class="col">
+            <image src="../../images/pic3.png" mode="widthFix"></image>
+            <text>东风标致原厂车钥匙</text>
+          </view>
+        </view>
+      </view>
+       <view  class="buttons2 ">
+        <van-button type="info" bindtap="gotoeditcard" >编辑名片</van-button>
+        <van-button plain  type="info">传播动态</van-button>
+      </view>
   </view>
 </view>
