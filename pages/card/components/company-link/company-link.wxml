@@ -1,0 +1,4 @@
+<div class="site" bindtap="toSite">
+  <image src="{{imageLogo}}" class="logo"></image>
+  <span class="name">{{companyName}}</span>
+</div>

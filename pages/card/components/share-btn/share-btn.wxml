@@ -1,0 +1,5 @@
+<!--pages/card/components/share-btn/share-btn.wxml-->
+<view class="buttons cl">
+  <van-button type="info" open-type='share'>分享名片</van-button>
+  <van-button plain type="info" class="normal" bindtap="addPhoneContact">保存到通讯录</van-button>
+</view>

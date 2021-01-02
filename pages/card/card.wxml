@@ -1,0 +1,41 @@
+<!--pages/card/card.wxml-->
+<div class="app-container">
+  <card-one card-info="{{cardInfo}}"></card-one>
+
+  <scroll-view class="contactinfo cl" scroll-x>
+    <view class="col">
+      <view><text class="iconfont van-icon-jue-gongsi"></text>公司</view>
+      <text>{{cardInfo.company_card_cfg.name}}</text>
+    </view>
+    <view class="col">
+      <view>
+        <text class="iconfont van-icon-jue-call"></text>电话</view>
+      <text>{{cardInfo.mobile}}</text>
+    </view>
+    <view class="col">
+      <view><text class="iconfont van-icon-jue-wechat"></text>微信</view>
+      <text>{{cardInfo.client_card_cfg.wechat}}</text>
+    </view>
+    <view class="col">
+      <view><text class="iconfont van-icon-jue-mail"></text>邮箱</view>
+      <text>{{cardInfo.client_card_cfg.email}}</text>
+    </view>
+  </scroll-view>
+
+  <share-btn card-info="{{cardInfo}}"></share-btn>
+
+  <view class="personal_profile">
+    <view class="title">
+      <image src="../../images/intro.png"></image>个人简介
+    </view>
+    <view class="con" wx:if="{{cardInfo.client_card_cfg.memo !== ''}}">
+      {{cardInfo.client_card_cfg.memo}}
+    </view>
+    <view class="con" wx:else>这个销售顾问有点懒，什么也没有留下</view>
+  </view>
+  <company-link image-logo="{{cardInfo.company_card_cfg.logo}}" company-name="{{cardInfo.company_card_cfg.name}}"></company-link>
+  <play-video card-info="{{cardInfo}}"></play-video>
+  <goods-list card-info="{{cardInfo}}"></goods-list>
+
+
+</div>

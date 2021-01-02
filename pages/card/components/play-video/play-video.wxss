@@ -1,0 +1,29 @@
+.videobox {
+  background: #fff;
+}
+.videobox .title {
+  display: block;
+  padding: 20rpx;
+}
+.videobox .title image {
+  position: relative;
+  top: 5rpx;
+  width: 40rpx;
+  height: 40rpx;
+  float: left;
+  display: inline;
+  margin-right: 10rpx;
+}
+.videobox .con {
+  font-size: 30rpx;
+  color: #606060;
+  margin-bottom: 30rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.videobox .con {
+  padding: 0 20rpx;
+}
+.videobox .con video {
+  width: 100%;
+}

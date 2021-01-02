@@ -1,0 +1,12 @@
+<view class="videobox">
+  <view class="title">
+    <image src="../../../../images/video.png"></image>
+    视频展示
+  </view>
+  <view class="con">
+    <video id="myVideo" src="{{cardInfo.company_card_cfg.video}}" show-center-play-btn='{{true}}'
+      show-play-btn="{{true}}" controls picture-in-picture-mode="{{['push', 'pop']}}"
+      bindenterpictureinpicture='bindVideoEnterPictureInPicture'
+      bindleavepictureinpicture='bindVideoLeavePictureInPicture'></video>
+  </view>
+</view>

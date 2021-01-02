@@ -1,0 +1,21 @@
+<!--pages/card/components/card-one/card-one.wxml-->
+<view class="card card-1">
+  <image src="{{cardInfo.client_card_cfg.avatar}}" class="avatar"></image>
+  <view class="main">
+    <view class="company">{{cardInfo.company_card_cfg.name}}</view>
+    <view class="name">
+      <text class="realname">{{cardInfo.realname}}</text>
+      <text class="pro">销售顾问</text>
+    </view>
+    <view class="tel">
+      <text class="iconfont van-icon-jue-call-fill"></text>
+      <text class="txt">{{cardInfo.mobile}}</text></view>
+    <view class="mail">
+      <text class="iconfont van-icon-jue-mail-fill"></text>
+      <text class="txt">{{cardInfo.client_card_cfg.email}}</text>
+    </view>
+    <view class="address">
+      <text class="iconfont van-icon-jue-location"></text>
+      <text class="txt">{{cardInfo.company_card_cfg.address}}</text></view>
+  </view>
+</view>
