@@ -5,7 +5,12 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/site/site",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/shop/shop",
+    "pages/goodsdetail/goodsdetail",
+    "pages/shoppingcart/shoppingcart",
+    "pages/shoppingbuy/shoppingbuy",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,22 +29,22 @@
         "selectedIconPath": "/images/tabBar/card.png"
       },
       {
-        "pagePath": "pages/card/card",
+        "pagePath": "pages/shop/shop",
         "text": "商城",
         "iconPath": "/images/tabBar/shop.png",
         "selectedIconPath": "/images/tabBar/shop.png"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "text": "我的",
-        "iconPath": "/images/tabBar/my.png",
-        "selectedIconPath": "/images/tabBar/my.png"
       },
       {
         "pagePath": "pages/site/site",
         "text": "官网",
         "iconPath": "/images/tabBar/site.png",
         "selectedIconPath": "/images/tabBar/site.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/tabBar/my.png",
+        "selectedIconPath": "/images/tabBar/my.png"
       }
     ]
   },
@@ -56,6 +61,15 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-checkbox": "@vant/weapp/checkbox/index",
-    "van-checkbox-group": "@vant/weapp/checkbox-group/index"
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-stepper": "@vant/weapp/stepper/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-submit-bar": "@vant/weapp/submit-bar/index"
   }
 }

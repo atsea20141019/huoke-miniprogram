@@ -1,0 +1,58 @@
+page {
+  background-color: #f0f0f0;
+}
+.order-list .item {
+  padding: 20rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.order-list .item .head {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.55);
+  padding: 10rpx 0;
+  margin-bottom: 20rpx;
+}
+.order-list .item .main {
+  display: flex;
+}
+.order-list .item .main .pic {
+  width: 200rpx;
+  height: 200rpx;
+}
+.order-list .item .main .body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.order-list .item .main .body .name {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+.order-list .item .main .body .name .txt {
+  font-size: 28rpx;
+  flex: 1;
+}
+.order-list .item .main .body .name .num {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.55);
+}
+.order-list .item .main .body .desc {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.55);
+  flex: 1;
+}
+.order-list .item .main .body .price-box {
+  display: flex;
+  font-size: 24rpx;
+}
+.order-list .item .main .body .price-box .price {
+  flex: 1;
+  font-weight: 600;
+}
+.order-list .item .main .body .price-box .status {
+  color: #f00;
+}
+.order-list .item .btns {
+  padding-top: 30rpx;
+  text-align: right;
+}

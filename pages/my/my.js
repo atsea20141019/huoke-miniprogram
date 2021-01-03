@@ -1,10 +1,13 @@
+import axios from '../../utils/http'
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    src: ''
+    src: '',
+    token: null
   },
 
   /**
@@ -12,8 +15,45 @@ Page({
    */
   onLoad: function (e) {
     this.setData({
-      src: decodeURIComponent('https://wechat.hk.jue.sh/#/my')
+      token: wx.getStorageSync('token')
     })
+  },
+
+  bindGetUserInfo(e) {
+    let _this = this
+    app.globalData.userInfo = e.detail.userInfo
+    wx.login({
+      success: codeRes => {
+        console.log(codeRes)
+        axios.post('/wxc/wx/mini_login', {
+          code: codeRes.code,
+          iv: e.detail.iv,
+          data: e.detail.encryptedData
+        }).then(res => {
+          wx.setStorageSync('token', res.data.token)
+          wx.setStorageSync('client_id', res.data.client_id)
+          app.globalData.token = res.data.token
+          app.globalData.client_id = res.data.client_id
+          _this.setData({
+            token: res.data.token
+          })
+          console.log(app.globalData)
+        })
+      }
+    })
+  },
+
+  toUrl(url) {
+    wx.navigateTo({
+      url: '/pages/webview/webview?url=' + url
+    })
+  },
+
+  toWebView(e) {
+    if(wx.getStorageSync('token')){
+      let token = wx.getStorageSync('token')
+      this.toUrl(app.globalData.webViewUrl + e.currentTarget.dataset.url + '?token=' + token)
+    }
   },
 
   back() {

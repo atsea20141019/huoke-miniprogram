@@ -21,6 +21,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    
+    toGoodsDetail(e){
+      wx.redirectTo({
+        url: '/pages/goodsdetail/goodsdetail?goods_no='+e.currentTarget.dataset.goods_no
+      })
+    }
   }
 })

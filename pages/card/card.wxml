@@ -8,7 +8,7 @@
       <text>{{cardInfo.company_card_cfg.name}}</text>
     </view>
     <view class="col">
-      <view>
+      <view bindtap="callPone" data-phoneNumber="{{cardInfo.mobile}}">
         <text class="iconfont van-icon-jue-call"></text>电话</view>
       <text>{{cardInfo.mobile}}</text>
     </view>

@@ -17,6 +17,10 @@ Page({
     })
   },
 
+  handleGetMessage(e){
+    console.log(e)
+  },
+
   back() {
     if (getCurrentPages().length == 1) {
       // 打开分享卡片无法回退

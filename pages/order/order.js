@@ -1,45 +1,46 @@
-// pages/card/card.js
+// pages/order/order.js
 import axios from '../../utils/http'
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cardInfo: {},
-    seller_id: null
+    active: 0,
+    orderList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.seller_id) {
-      this.setData({
-        seller_id: Number(options.seller_id) 
-      })
-    } else {
-      this.setData({
-        seller_id: null
-      })
-    }
-    this.getCardInfo()
+    this.getOrderList(0)
   },
 
-  callPone(e){
-    wx.makePhoneCall({
-      phoneNumber: e.currentTarget.dataset.phonenumber
-    })
-  },
-
-  getCardInfo() {
-    axios.post('/wxc/index/card_page', {
-      seller_id: this.data.seller_id
+  getOrderList(status){
+    axios.post('/wxc/order/lists', {
+      status: status
     }).then(res => {
+      let arr = []
+      let activeTxt = ['', '未付款', '待核销', '已核销']
+      res.data.list.map(item => {
+        item.picUrl = item.cover_img.split('|')[0]
+        item.status_txt = activeTxt[item.status]
+        arr.push(item)
+      })
+
       this.setData({
-        cardInfo: res.data
+        orderList: arr
       })
     })
+  },
+
+  changeOrderList(e) {
+    this.setData({
+      active: e.detail.index
+    })
+    this.getOrderList(e.detail.index)
   },
 
   /**
@@ -87,10 +88,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function (res) {
-    return {
-      title: this.data.cardInfo.realname,
-      path: '/pages/card/card?seller_id=' + this.data.cardInfo.seller_id
-    }
+  onShareAppMessage: function () {
+
   }
 })

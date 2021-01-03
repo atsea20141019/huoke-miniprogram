@@ -1,0 +1,24 @@
+<view class="container">
+
+  <van-cell-group>
+    <van-cell center title="{{address.realname}}  {{address.mobile}}" label="{{address.region}}{{address.address}}" icon="location-o" is-link wx:if="{{address}}" bindtap="selectAddress">
+    </van-cell>
+    <van-cell wx:else title="没有地址" icon="location-o" is-link>
+    </van-cell>
+  </van-cell-group>
+
+  <van-cell-group>
+    <van-cell>
+      <van-card price="{{goodsDetail.sale_price/100}}" desc="{{goodsDetail.desc}}" title="{{goodsDetail.name}}"
+        thumb="{{imgUrls}}">
+      </van-card>
+    </van-cell>
+
+    <van-cell title="购买数量">
+      <van-stepper label="购买数量" value="{{ 1 }}" bind:change="onChangeNum" />
+    </van-cell>
+  </van-cell-group>
+
+  <van-submit-bar price="{{ price }}" button-text="立即支付" bind:submit="onSubmit" />
+
+</view>

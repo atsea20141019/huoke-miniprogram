@@ -1,0 +1,72 @@
+page {
+  background-color: #f0f0f0;
+}
+
+.order-list {
+  .item {
+    padding: 20rpx;
+    background-color: #fff;
+    margin-bottom: 30rpx;
+
+    .head {
+      font-size: 24rpx;
+      color: rgba(0, 0, 0, .55);
+      padding: 10rpx 0;
+      margin-bottom: 20rpx;
+    }
+
+    .main {
+      display: flex;
+
+      .pic {
+        width: 200rpx;
+        height: 200rpx;
+      }
+
+      .body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .name {
+          display: flex;
+          margin-bottom: 10rpx;
+
+          .txt {
+            font-size: 28rpx;
+            flex: 1;
+          }
+
+          .num {
+            font-size: 24rpx;
+            color: rgba(0, 0, 0, .55);
+          }
+        }
+
+        .desc {
+          font-size: 24rpx;
+          color: rgba(0, 0, 0, .55);
+          flex: 1;
+        }
+
+        .price-box {
+          display: flex;
+          font-size: 24rpx;
+          .price {
+            flex: 1;
+            font-weight: 600;
+          }
+
+          .status {
+            color: #f00;
+          }
+        }
+      }
+    }
+    .btns{
+      padding-top: 30rpx;
+      text-align: right;
+    }
+
+  }
+}

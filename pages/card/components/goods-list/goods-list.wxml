@@ -4,7 +4,7 @@
     推荐商品
   </view>
   <view class="con cl">
-    <view class="col" wx:for="{{cardInfo.goods_list}}" wx:key="unique">
+    <view class="col" wx:for="{{cardInfo.goods_list}}" wx:key="unique" bindtap="toGoodsDetail" data-goods_no="{{item.goods_no}}">
       <image src="{{func.getCoverImg(item)}}" mode="widthFix"></image>
       <text>{{item.name}}</text>
     </view>

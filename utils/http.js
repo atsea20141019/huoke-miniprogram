@@ -23,7 +23,7 @@ class Axios {
         data: data,
         header: {
           "content-type": comtentType,
-          "client-token": wx.getStorageSync('client-token')
+          "client-token": wx.getStorageSync('token')
         },
         success(res) {
           resolve(res.data)

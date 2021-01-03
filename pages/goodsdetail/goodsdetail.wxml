@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="swiperContainer">
+    <swiper bindchange="swiperChange" autoplay="{{autoplay}}" duration="{{duration}}">
+      <block wx:for="{{imgUrls}}" wx:key="*this">
+        <swiper-item wx:key="*this">
+          <image src="{{item}}" class="slide-image" class='img' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="imageCount">{{current+1}}/{{imgUrls.length}}</view>
+  </view>
+  <view class="goodsinfo cl">
+    <text class="title">{{goodsDetail.name}}</text>
+    <view class="price">￥<text>{{goodsDetail.sale_price/100}} </text></view>
+    <view class="original_price">￥<text>{{goodsDetail.origin_price/100}}</text> </view>
+    <text class="number">月销：{{goodsDetail.month_sale_volume}}</text>
+  </view>
+  <rich-text class="detail">{{goodsDetail.content}}</rich-text>
+  <van-goods-action>
+      <van-goods-action-icon icon="cart-o" text="购物车" info="5" bind:click="onClick_gwc" />
+      <van-goods-action-button text="加入购物车" type="warning"  bind:click="onClick_gwc" class="jr_gwc" />
+      <van-goods-action-button text="立即购买"  open-type="getUserInfo" bindgetuserinfo="butGoods" data-goods_no="{{goodsDetail.goods_no}}" class="ljgm"/>
+    </van-goods-action>
+</view>

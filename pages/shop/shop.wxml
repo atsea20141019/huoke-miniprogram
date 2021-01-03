@@ -1,0 +1,56 @@
+<!--pages/shopping/shopping_index.wxml-->
+<view class="container">
+  <!--轮播-->
+  <swiper indicator-active-color='#fff' indicator-dots="true">
+    <block wx:for="{{imgs}}" wx:for-index="index" wx:key="swiperItem" wx:for-item="item">
+      <swiper-item class="swiper-items">
+        <image class="swiper-image" src="{{item}}" mode="widthFix"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!--轮播结束-->
+  <!-- tab导航栏 -->
+  <!-- scroll-left属性可以控制滚动条位置 -->
+  <!-- scroll-with-animation滚动添加动画过渡 -->
+  <view class="shopmain">
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <view class="nav-item {{currentTab == 0 ?'active':''}}" data-current="0" bindtap="switchNav">
+        所有商品
+      </view>
+      <block wx:for="{{navData}}" wx:for-index="key" wx:for-item="value" wx:key="key">
+        <view class="nav-item {{currentTab == key ?'active':''}}" data-current="{{key}}" bindtap="switchNav">
+          {{value}}</view>
+      </block>
+    </scroll-view>
+    <!-- 页面内容 -->
+    <view class="tab-box">
+      <view class="tab-content">
+        <scroll-view scroll-y="true">
+          <view class="scrollview">
+
+            <view class="item" bindtap="showgoodsdetail" wx:for="{{goodsList}}" wx:key="index" data-no="{{item.goods_no}}">
+              <image src="{{func.getCoverImg(item)}}"></image>
+              <view class="dc_con">
+                <text class="title">{{item.name}}</text>
+                <text class="detail">{{item.desc}}</text>
+                <view class="price">￥<text>{{item.sale_price/100}} </text></view>
+                <view class="original_price">￥<text>{{item.origin_price/100}}</text> </view>
+                <text class="number">月销：2{{item.month_sale_volume}}</text>
+              </view>
+            </view>
+
+          </view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+</view>
+
+<wxs module="func">
+  module.exports = {
+    getCoverImg: function(item){
+      return item.cover_img.split('|')[0]
+    }
+  }
+</wxs>

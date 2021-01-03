@@ -1,0 +1,45 @@
+<view>
+  <van-tabs sticky border active="{{ active }}" bind:change="changeOrderList" bind:click="changeOrder">
+    <van-tab name="0" title="全部"></van-tab>
+    <van-tab name="1" title="未付款"></van-tab>
+    <van-tab name="2" title="待核销"></van-tab>
+    <van-tab name="3" title="已核销"></van-tab>
+  </van-tabs>
+  <view class="order-list">
+
+    <view class="item" wx:for="{{orderList}}" wx:key="unique">
+      <view class="head">订单编号：{{orderList.goods_no}}</view>
+      <view class="main">
+        <image class="pic" src="{{func.getCoverImg(item)}}">
+        </image>
+        <view class="body">
+          <view class="name">
+            <view class="txt">{{item.goods_name}}</view>
+            <view class="num">x {{item.quantum}}</view>
+          </view>
+          <view class="desc"></view>
+          <view class="price-box">
+            <text class="price">￥ {{item.amount/100}}</text>
+            <text class="status">{{item.status_txt}}</text>
+          </view>
+        </view>
+      </view>
+      <view class="btns" wx:if="{{item.status === 1}}">
+        <van-button type="default" size="mini">马上支付</van-button>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<wxs module="func">
+  module.exports = {
+    getCoverImg: function (item) {
+      return item.cover_img.split('|')[0]
+    },
+    getTxt: function (i) {
+      let activeTxt = ['', '未付款', '待核销', '已核销']
+      return activeTxt[i]
+    }
+  }
+</wxs>

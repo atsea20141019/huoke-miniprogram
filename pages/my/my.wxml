@@ -1,1 +1,19 @@
-<web-view src="{{src}}" class="web-view"></web-view>
+<view class="block">
+  <view class="head-title">我的</view>
+  <van-grid square clickable column-num="2">
+    <van-grid-item text="我的信息" icon="user-o" bind:click="toWebView" data-url="/my/info"></van-grid-item>
+    <van-grid-item text="我的订单" icon="orders-o" url="/pages/order/order"></van-grid-item>
+    <!-- <van-grid-item text="我的地址" icon="aim"></van-grid-item> -->
+    <van-grid-item text="我要推广" icon="newspaper-o" bind:click="toWebView" data-url="/media/list"></van-grid-item>
+    <van-grid-item text="我的拥金" icon="balance-o" bind:click="toWebView" data-url="/cash/list"></van-grid-item>
+  </van-grid>
+</view>
+
+<van-overlay show="{{ !token }}">
+  <div class="box">
+    <div class="title">微信授权</div>
+    <div class="desc">此页面是微信授权页面，点击下方按钮弹出授权或跳转页面</div>
+
+    <van-button plain type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</van-button>
+  </div>
+</van-overlay>
