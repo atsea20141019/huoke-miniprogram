@@ -1,6 +1,6 @@
 <view class="block">
   <view class="head-title">我的</view>
-  <van-grid square clickable column-num="2">
+  <van-grid square clickable column-num="3">
     <van-grid-item text="我的信息" icon="user-o" bind:click="toWebView" data-url="/my/info"></van-grid-item>
     <van-grid-item text="我的订单" icon="orders-o" url="/pages/order/order"></van-grid-item>
     <!-- <van-grid-item text="我的地址" icon="aim"></van-grid-item> -->
