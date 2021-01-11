@@ -8,14 +8,14 @@
       <text class="pro">销售顾问</text>
     </view>
     <view class="tel">
-      <text class="iconfont van-icon-jue-call-fill"></text>
+      <van-icon name="jue-call-fill" />
       <text class="txt">{{cardInfo.mobile}}</text></view>
     <view class="mail">
-      <text class="iconfont van-icon-jue-mail-fill"></text>
+      <van-icon name="jue-mail-fill" />
       <text class="txt">{{cardInfo.client_card_cfg.email}}</text>
     </view>
     <view class="address">
-      <text class="iconfont van-icon-jue-location"></text>
+      <van-icon name="jue-location" />
       <text class="txt">{{cardInfo.company_card_cfg.address}}</text></view>
   </view>
 </view>
