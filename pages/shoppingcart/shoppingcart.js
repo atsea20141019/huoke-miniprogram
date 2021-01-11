@@ -5,14 +5,103 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    dataList: [],
+    goods_no: '',
+    quantum: 1,
+    price: 0,
+    totalPrice: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this = this
+    wx.getStorage({
+      key: 'cart_list',
+      success(res) {
+        _this.setData({
+          dataList: res.data,
+          goods_no: res.data[0].goods_no,
+          quantum: res.data[0].quantum,
+          price: res.data[0].price * 100,
+          totalPrice: res.data[0].quantum * res.data[0].price * 100
+        })
+      }
+    })
 
+  },
+
+  onChangeNum(e) {
+    let _this = this
+    this.setData({
+      quantum: e.detail,
+      totalPrice: e.detail * e.currentTarget.dataset.price * 100
+    })
+
+  },
+
+  radioChange(e) {
+    let _this = this
+    this.setData({
+      goods_no: e.detail.value
+    })
+    this.data.dataList.map((item, index) => {
+      if(item.goods_no === e.detail.value){
+        _this.setData({
+          quantum: item.quantum,
+          price: item.price,
+          totalPrice: item.price * item.quantum * 100,
+        })
+      }
+    })
+
+  },
+
+  deleteItem() {
+    let _this = this
+    wx.showModal({
+      content: '确定从购物车中删除该商品？',
+      success(res) {
+        if (res.confirm) {
+          wx.getStorage({
+            key: 'cart_list',
+            success(res) {
+              let cartList = res.data
+              res.data.map((item, index) => {
+                if (_this.data.goods_no === item.goods_no) {
+                  cartList.splice(index, 1)
+                }
+              })
+
+              _this.setData({
+                dataList: cartList
+              })
+
+
+              wx.setStorage({
+                key: 'cart_list',
+                data: cartList
+              })
+
+
+
+            }
+          })
+
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+
+  },
+
+  onSubmit(){
+    let _this = this
+    wx.redirectTo({
+      url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+    })
   },
 
   /**

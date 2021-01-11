@@ -1,0 +1,12 @@
+<view class="recommendbox">
+  <view class="title">
+    <image src="../../../../images/imgs.png"></image>
+    我的图片
+  </view>
+
+  <van-grid column-num="3" border="{{ false }}">
+    <van-grid-item use-slot wx:for="{{ coverImg }}" wx:key="index" bind:click="viewImg" data-imgSrc="{{item}}">
+      <image src="{{item}}" mode="aspectFill" class="item"></image>
+    </van-grid-item>
+  </van-grid>
+</view>

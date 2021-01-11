@@ -14,7 +14,8 @@ Page({
     current: 0,
     show: false,
     //幻灯参数
-    goodsDetail: {}
+    goodsDetail: {},
+    cartNum: 0
   },
   swiperChange: function (e) {
     var that = this;
@@ -40,11 +41,93 @@ Page({
       url: '../shoppingcart/shoppingcart',
     })
   },
+  addCart(e) {
+    let _this = this
+    console.log(e)
+    //读取本地缓存
+    wx.getStorage({
+      key: 'cart_list',
+      success(res) {
+        console.log('成功了')
+        let goodsItem = {
+          goods_no: e.currentTarget.dataset.goods_no,
+          goods_name: e.currentTarget.dataset.goods_name,
+          imgUrls: e.currentTarget.dataset.imgurls,
+          price: e.currentTarget.dataset.price,
+          quantum: 1
+        }
+
+        let cartList = res.data
+        let cartNum = 1
+        res.data.map((item, index) => {
+          if (e.currentTarget.dataset.goods_no === item.goods_no) {
+            goodsItem.quantum = item.quantum + 1
+            cartList.splice(index, 1)
+          }
+          cartNum += item.quantum
+        })
+
+
+        cartList.push(goodsItem)
+        _this.setData({
+          cartNum: cartNum
+        })
+        wx.setStorage({
+          key: 'cart_list',
+          data: cartList
+        })
+
+      },
+      fail(res) {
+        console.log('失败了')
+        //第一次保存
+        wx.setStorage({
+          key: 'cart_list',
+          data: [{
+            goods_no: e.currentTarget.dataset.goods_no,
+            goods_name: e.currentTarget.dataset.goods_name,
+            imgUrls: e.currentTarget.dataset.imgurls,
+            price: e.currentTarget.dataset.price,
+            quantum: 1
+          }],
+          success() {
+            _this.setData({
+              cartNum: 1
+            })
+          }
+        })
+      }
+    })
+
+    wx.showToast({
+      title: '已添加到购物车',
+      icon: 'success',
+      duration: 2000
+    })
+
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this = this
     this.getGoodsDetail(options.goods_no)
+
+    //设置购物车数量
+    wx.getStorage({
+      key: 'cart_list',
+      success(res) {
+        let cartNum = 0
+        res.data.map(item => {
+          cartNum += item.quantum
+        })
+        _this.setData({
+          cartNum: cartNum
+        })
+      }
+    })
 
     // this.showPopup();
   },
@@ -66,11 +149,11 @@ Page({
   },
 
   butGoods(e) {
-    if(!wx.getStorageSync('token')){
+    if (!wx.getStorageSync('token')) {
       login(e)
     }
     wx.navigateTo({
-      url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no
+      url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no + '&quantum=1'
     })
   },
 

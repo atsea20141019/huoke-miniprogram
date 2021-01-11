@@ -70,6 +70,9 @@
     "van-cell": "@vant/weapp/cell/index",
     "van-swipe-cell": "@vant/weapp/swipe-cell/index",
     "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-submit-bar": "@vant/weapp/submit-bar/index"
   }
 }

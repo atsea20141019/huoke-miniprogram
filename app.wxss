@@ -7,3 +7,19 @@
   flex-direction: column;
   box-sizing: border-box;
 }
+
+[class*=' van-icon-jue-'],
+[class^='van-icon-jue-'] {
+  font-family: 'iconfont' !important;
+}
+
+.van-card {
+  background-color: #fff !important;
+  background-color: var(--card-background-color, #fff) !important;
+}
+
+.van-card__content {
+  text-align: left;
+}
+
+/* .van-icon-jue */

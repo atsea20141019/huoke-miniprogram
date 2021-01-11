@@ -18,6 +18,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
+    this.setData({
+      num: options.quantum
+    })
     this.getAddress()
     this.getGoodsDetail(options.goods_no)
   },
@@ -57,9 +61,9 @@ Page({
     })
   },
   onChangeNum(e) {
+    console.log(e)
     this.setData({
-      num: e.detail,
-      price: e.detail * this.data.goodsDetail.sale_price
+      num: e.detail
     })
   },
 
@@ -70,6 +74,13 @@ Page({
       address_id: this.data.address.address_id
     }).then(res => {
       console.log(res)
+      if(res.code !== 200){
+        wx.showModal({
+          content: res.msg,
+          showCancel: false
+        })
+        return false
+      }
       wx.requestPayment({
         timeStamp: res.data.payment.timeStamp,
         nonceStr: res.data.payment.nonceStr,

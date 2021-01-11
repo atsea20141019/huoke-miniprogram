@@ -15,10 +15,10 @@
     </van-cell>
 
     <van-cell title="购买数量">
-      <van-stepper label="购买数量" value="{{ 1 }}" bind:change="onChangeNum" />
+      <van-stepper label="购买数量" value="{{ num }}" bind:change="onChangeNum" />
     </van-cell>
   </van-cell-group>
 
-  <van-submit-bar price="{{ price }}" button-text="立即支付" bind:submit="onSubmit" />
+  <van-submit-bar price="{{ price * num }}" button-text="立即支付" bind:submit="onSubmit" />
 
 </view>

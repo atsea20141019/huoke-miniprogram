@@ -1,0 +1,6 @@
+<van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="jue-biji">名片</van-tabbar-item>
+  <van-tabbar-item icon="jue-shangdian">商城</van-tabbar-item>
+  <van-tabbar-item icon="jue-yinhang">官网</van-tabbar-item>
+  <van-tabbar-item icon="jue-wode">我的</van-tabbar-item>
+</van-tabbar>

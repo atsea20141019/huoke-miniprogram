@@ -7,7 +7,9 @@ Page({
    */
   data: {
     cardInfo: {},
-    seller_id: null
+    seller_id: null,
+    coverImgs: [],
+    active: 0
   },
 
   /**
@@ -37,7 +39,8 @@ Page({
       seller_id: this.data.seller_id
     }).then(res => {
       this.setData({
-        cardInfo: res.data
+        cardInfo: res.data,
+        coverImgs: res.data.client_card_cfg.cover_img.split('|')
       })
     })
   },

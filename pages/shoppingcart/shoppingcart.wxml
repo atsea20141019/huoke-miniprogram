@@ -1,2 +1,25 @@
-<!--pages/shoppingcart/shoppingcart.wxml-->
-<text>pages/shoppingcart/shoppingcart.wxml</text>
+<view class="container">
+  <radio-group bindchange="radioChange" wx:if="{{dataList.length}}">
+    <view class="list-box" wx:for="{{dataList}}" wx:key="index">
+      <radio class="select" color="#1989fa" value="{{item.goods_no}}" checked="{{item.goods_no === goods_no}}" />
+      <image class="image" src="{{item.imgUrls}}"></image>
+      <view class="main">
+        <view class="name">{{item.goods_name}}</view>
+        <view class="desc"></view>
+        <view class="line">
+          <view class="price">￥{{item.price}}</view>
+          <van-stepper label="购买数量" value="{{ item.quantum }}" bind:change="onChangeNum" data-price="{{item.price}}" data-goods_no="{{item.goods_name}}" disabled="{{item.goods_no != goods_no}}" />
+        </view>
+      </view>
+    </view>
+  </radio-group>
+
+  <div class="none" wx:else>
+    购物车为空
+  </div>
+
+  <van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bind:submit="onSubmit">
+    <van-button round plain type="info" size="mini" color="#ee0a24" bind:click="deleteItem">删除</van-button>
+  </van-submit-bar>
+
+</view>

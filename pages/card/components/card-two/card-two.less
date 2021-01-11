@@ -8,30 +8,31 @@
   border-radius: 8rpx;
   overflow: hidden;
 }
-
-.card-1 {
-  display: flex;
-  height: 390rpx;
-
-  .avatar {
-    width: 320rpx;
-    height: 390rpx;
+.card-2 {
+  .img-tu {
+    width: 100%;
   }
 
   .main {
-    font-size: 24rpx;
-    color: #606060;
-    flex: 1;
     position: relative;
+    text-align: center;
+    padding: 100rpx 0 60rpx;
+    font-size: 24rpx;
+    color: #333;
 
-    .company {
-      padding: 30rpx 20rpx;
-      text-align: right;
-      display: block;
+    .avatar {
+      width: 160rpx;
+      height: 160rpx;
+      border: 10rpx #fff solid;
+      // padding: 10rpx;
+      border-radius: 50%;
+      // background-color: #fff;
+      position: absolute;
+      top: -80rpx;
+      left: calc(50% - 80rpx);
     }
 
     .name {
-      padding: 50rpx 0;
       .realname {
         font-weight: 700;
         color: #333;
@@ -40,33 +41,30 @@
 
       .pro {
         padding: 0 10rpx;
+        opacity: .65;
       }
     }
 
-    .tel,
-    .mail,
-    .address {
-      line-height: 1.5;
+    .company {
+      line-height: 2;
+      opacity: .85;
+    }
+
+    .line {
+      padding-top: 20rpx;
+      line-height: 2;
       display: flex;
-      align-items: center;
-      .iconfont{
-        font-size: 24rpx;
-      }
+      justify-content: center;
 
-      .txt {
-        flex: 1;
-        padding: 0 10rpx;
+      .tel,
+      .mail {
+        width: 240rpx;
       }
     }
 
-    &::after {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      left: -200rpx;
-      border-width: 390rpx 100rpx;
-      border-style: solid;
-      border-color: transparent #fff transparent transparent;
+    .address {
+      width: 480rpx;
+      margin: 0 auto;
     }
   }
 }

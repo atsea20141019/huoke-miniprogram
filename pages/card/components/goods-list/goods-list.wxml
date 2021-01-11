@@ -3,9 +3,17 @@
     <image src="../../../../images/shop.png"></image>
     推荐商品
   </view>
+
+  <!-- <van-grid column-num="2" border="{{ false }}">
+    <van-grid-item use-slot wx:for="{{ cardInfo.goods_list }}" wx:key="index" bind:click="toGoodsDetail" data-goods_no="{{item.goods_no}}">
+      <image src="{{func.getCoverImg(item)}}" mode="aspectFill" class="item"></image>
+      <text>{{item.name}}</text>
+    </van-grid-item>
+  </van-grid> -->
+
   <view class="con cl">
     <view class="col" wx:for="{{cardInfo.goods_list}}" wx:key="unique" bindtap="toGoodsDetail" data-goods_no="{{item.goods_no}}">
-      <image src="{{func.getCoverImg(item)}}" mode="widthFix"></image>
+      <image src="{{func.getCoverImg(item)}}" mode="aspectFill"></image>
       <text>{{item.name}}</text>
     </view>
   </view>

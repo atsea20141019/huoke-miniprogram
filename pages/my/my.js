@@ -1,4 +1,7 @@
 import axios from '../../utils/http'
+import {
+  login
+} from '../../utils/login'
 const app = getApp()
 Page({
 
@@ -7,40 +10,48 @@ Page({
    */
   data: {
     src: '',
-    token: null
+    notlogin: true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    this.setData({
-      token: wx.getStorageSync('token')
-    })
+    if (wx.getStorageSync('token')) {
+      this.setData({
+        notlogin: false
+      })
+    }
+
   },
 
   bindGetUserInfo(e) {
     let _this = this
-    app.globalData.userInfo = e.detail.userInfo
-    wx.login({
-      success: codeRes => {
-        console.log(codeRes)
-        axios.post('/wxc/wx/mini_login', {
-          code: codeRes.code,
-          iv: e.detail.iv,
-          data: e.detail.encryptedData
-        }).then(res => {
-          wx.setStorageSync('token', res.data.token)
-          wx.setStorageSync('client_id', res.data.client_id)
-          app.globalData.token = res.data.token
-          app.globalData.client_id = res.data.client_id
-          _this.setData({
-            token: res.data.token
-          })
-          console.log(app.globalData)
-        })
-      }
+    login(e)
+    this.setData({
+      notlogin: true
     })
+
+    // app.globalData.userInfo = e.detail.userInfo
+    // wx.login({
+    //   success: codeRes => {
+    //     console.log(codeRes)
+    //     axios.post('/wxc/wx/mini_login', {
+    //       code: codeRes.code,
+    //       iv: e.detail.iv,
+    //       data: e.detail.encryptedData
+    //     }).then(res => {
+    //       wx.setStorageSync('token', res.data.token)
+    //       wx.setStorageSync('client_id', res.data.client_id)
+    //       app.globalData.token = res.data.token
+    //       app.globalData.client_id = res.data.client_id
+    //       _this.setData({
+    //         token: res.data.token
+    //       })
+    //       console.log(app.globalData)
+    //     })
+    //   }
+    // })
   },
 
   toUrl(url) {
@@ -50,7 +61,7 @@ Page({
   },
 
   toWebView(e) {
-    if(wx.getStorageSync('token')){
+    if (wx.getStorageSync('token')) {
       let token = wx.getStorageSync('token')
       this.toUrl(app.globalData.webViewUrl + e.currentTarget.dataset.url + '?token=' + token)
     }
