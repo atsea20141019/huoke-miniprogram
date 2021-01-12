@@ -114,6 +114,11 @@ Page({
   onLoad: function (options) {
     let _this = this
     this.getGoodsDetail(options.goods_no)
+    if(options.relation_id){
+      wx.setStorageSync('relation_id', options.relation_id)
+    }else{
+      wx.clearStorageSync()
+    }
 
     //设置购物车数量
     wx.getStorage({

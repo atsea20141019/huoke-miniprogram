@@ -10,7 +10,8 @@
     "pages/goodsdetail/goodsdetail",
     "pages/shoppingcart/shoppingcart",
     "pages/shoppingbuy/shoppingbuy",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/qrcode/qrcode"
   ],
   "window": {
     "backgroundTextStyle": "light",

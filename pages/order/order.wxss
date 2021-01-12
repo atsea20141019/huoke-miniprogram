@@ -67,3 +67,12 @@ page {
   padding-top: 30rpx;
   text-align: right;
 }
+.form-box {
+  padding: 50rpx 30rpx;
+}
+.form-box .txt {
+  font-size: 24rpx;
+}
+.btns-2 {
+  padding: 30rpx 0;
+}

@@ -99,10 +99,12 @@ Page({
   },
 
   onSubmit() {
+    let relation_id = wx.getStorageSync('relation_id')
     axios.post('/wxc/order/create', {
       goods_no: this.data.goodsDetail.goods_no,
       quantum: this.data.num,
-      address_id: this.data.address.address_id
+      address_id: this.data.address.address_id,
+      relation_id: relation_id
     }).then(res => {
       console.log(res)
       if (res.code !== 200) {

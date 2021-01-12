@@ -8,7 +8,11 @@ Page({
    */
   data: {
     active: 0,
-    orderList: []
+    orderList: [],
+    show: false,
+    order_no: '',
+    memo: ''
+
   },
 
   /**
@@ -18,15 +22,29 @@ Page({
     this.getOrderList(0)
   },
 
-  getOrderList(status){
+  getOrderList(active) {
+    let status = active
+    if (active === 4) {
+      status = -1
+    }
+    if (active === 5) {
+      status = -2
+    }
     axios.post('/wxc/order/lists', {
       status: status
     }).then(res => {
       let arr = []
-      let activeTxt = ['', '未付款', '待核销', '已核销', '已取消']
+      let activeTxt = ['', '未付款', '待核销', '已核销', '退款中', '已取消']
       res.data.list.map(item => {
         item.picUrl = item.cover_img.split('|')[0]
-        item.status_txt = activeTxt[item.status]
+
+        if (item.status == -1) {
+          item.status_txt = '退款中'
+        } else if (item.status == -2) {
+          item.status_txt = '已取消'
+        } else {
+          item.status_txt = activeTxt[item.status]
+        }
         arr.push(item)
       })
 
@@ -43,7 +61,7 @@ Page({
     this.getOrderList(e.detail.index)
   },
 
-  topPay(e){
+  topPay(e) {
     let _this = this
     // console.log(e.currentTarget.dataset.info)
     let info = e.currentTarget.dataset.info
@@ -67,6 +85,38 @@ Page({
 
         }
       })
+    })
+  },
+
+  showCancel(e) {
+    this.setData({
+      show: true,
+      order_no: e.currentTarget.dataset.order_no
+    })
+  },
+
+  onClose() {
+    this.setData({
+      show: false
+    })
+  },
+
+  bindinput(e) {
+    this.setData({
+      memo: e.detail.value
+    })
+  },
+
+  toCancel() {
+    let _this = this
+    axios.post('/wxc/order/refund', {
+      order_no: _this.data.order_no,
+      memo: _this.data.memo
+    }).then(res => {
+      _this.setData({
+        show: false
+      })
+      _this.getOrderList(2)
     })
   },
 
