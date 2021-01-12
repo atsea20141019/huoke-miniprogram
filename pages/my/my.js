@@ -10,7 +10,8 @@ Page({
    */
   data: {
     src: '',
-    notlogin: true
+    notlogin: true,
+    wechat_avatar: ''
   },
 
   /**
@@ -19,7 +20,9 @@ Page({
   onLoad: function (e) {
     if (wx.getStorageSync('token')) {
       this.setData({
-        notlogin: false
+        notlogin: false,
+        wechat_avatar: wx.getStorageSync('wechat_avatar'),
+        wechat_nickname: wx.getStorageSync('wechat_nickname')
       })
     }
 
@@ -56,7 +59,7 @@ Page({
 
   toUrl(url) {
     wx.navigateTo({
-      url: '/pages/webview/webview?url=' + url
+      url: '/pages/webview/webview?url=' + encodeURIComponent(url) 
     })
   },
 

@@ -124,6 +124,8 @@ Page({
                 if (res.code === 200) {
                   wx.setStorageSync('token', res.data.token)
                   wx.setStorageSync('client_id', res.data.client_id)
+                  wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
+                  wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
                   app.globalData.token = res.data.token
                   app.globalData.client_id = res.data.client_id
                   wx.redirectTo({
