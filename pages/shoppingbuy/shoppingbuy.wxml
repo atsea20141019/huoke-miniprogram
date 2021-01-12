@@ -1,7 +1,8 @@
 <view class="container">
 
-  <van-cell-group>
-    <van-cell center title="{{address.realname}}  {{address.mobile}}" label="{{address.region}}{{address.address}}" icon="location-o" is-link wx:if="{{address}}" bindtap="selectAddress">
+  <van-cell-group bindtap="showPopup">
+    <van-cell center title="{{address.realname}}  {{address.mobile}}" label="{{address.region}}{{address.address}}"
+      icon="location-o" is-link wx:if="{{address}}">
     </van-cell>
     <van-cell wx:else title="没有地址" icon="location-o" is-link>
     </van-cell>
@@ -22,3 +23,22 @@
   <van-submit-bar price="{{ price * num }}" button-text="立即支付" bind:submit="onSubmit" />
 
 </view>
+
+<van-popup show="{{ show }}" bind:close="onClose" position="bottom" custom-style="height: 100%;">
+
+  <van-swipe-cell right-width="{{ 120 }}" wx:for="{{addressList}}" wx:key="index">
+    <van-cell-group>
+      <van-cell center title="{{item.realname}}  {{item.mobile}}" label="{{item.region}}{{item.address}}"
+        icon="location-o" is-link bind:click="selectAddress" data-add="{{item}}">
+      </van-cell>
+    </van-cell-group>
+    <view slot="right" class="edit-box">
+      <view class="btn edit">编辑</view>
+      <view class="btn del">删除</view>
+    </view>
+  </van-swipe-cell>
+
+
+
+
+</van-popup>

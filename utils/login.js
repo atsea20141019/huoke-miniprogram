@@ -16,6 +16,9 @@ export function login(e) {
         app.globalData.token = res.data.token
         app.globalData.client_id = res.data.client_id
       })
+    },
+    fail: res => {
+      return false
     }
   })
 }

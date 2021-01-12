@@ -46,3 +46,26 @@ page {
   color: rgba(0, 0, 0, 0.55);
   padding-top: 40rpx;
 }
+.submit-bar {
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding: 20rpx 20rpx 40rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+.submit-bar .del {
+  flex: 1;
+}
+.submit-bar .heji {
+  font-size: 24rpx;
+}
+.submit-bar .heji .total-price {
+  font-size: 36rpx;
+  padding: 0 20rpx 0 0;
+  color: #ee0a24;
+  font-weight: 700;
+}

@@ -23,7 +23,7 @@ Page({
       status: status
     }).then(res => {
       let arr = []
-      let activeTxt = ['', '未付款', '待核销', '已核销']
+      let activeTxt = ['', '未付款', '待核销', '已核销', '已取消']
       res.data.list.map(item => {
         item.picUrl = item.cover_img.split('|')[0]
         item.status_txt = activeTxt[item.status]
@@ -41,6 +41,33 @@ Page({
       active: e.detail.index
     })
     this.getOrderList(e.detail.index)
+  },
+
+  topPay(e){
+    let _this = this
+    // console.log(e.currentTarget.dataset.info)
+    let info = e.currentTarget.dataset.info
+    axios.post('/wxc/order/wx_pay', {
+      order_no: info.order_no
+    }).then(res => {
+      console.log(res.data)
+
+      wx.requestPayment({
+        timeStamp: res.data.timeStamp,
+        nonceStr: res.data.nonceStr,
+        package: res.data.package,
+        signType: res.data.signType,
+        paySign: res.data.paySign,
+        success: function (res) {
+          _this.getOrderList(2)
+          // 支付成功后的回调函数
+          // wx.redirectTo({
+          //   url: '/pages/order/order'
+          // })
+
+        }
+      })
+    })
   },
 
   /**

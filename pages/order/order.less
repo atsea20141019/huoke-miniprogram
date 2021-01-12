@@ -1,12 +1,18 @@
 page {
   background-color: #f0f0f0;
 }
-
+.top-bar{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
 .order-list {
+  padding-top: 54px;
   .item {
     padding: 20rpx;
     background-color: #fff;
-    margin-bottom: 30rpx;
+    margin-bottom: 20rpx;
 
     .head {
       font-size: 24rpx;
@@ -33,7 +39,8 @@ page {
           margin-bottom: 10rpx;
 
           .txt {
-            font-size: 28rpx;
+            font-size: 24rpx;
+            padding-right: 40rpx;
             flex: 1;
           }
 
@@ -55,10 +62,11 @@ page {
           .price {
             flex: 1;
             font-weight: 600;
+            color: #ee0a24;
           }
 
           .status {
-            color: #f00;
+            color: #ee0a24;
           }
         }
       }

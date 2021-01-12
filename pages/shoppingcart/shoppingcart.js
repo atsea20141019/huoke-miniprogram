@@ -1,4 +1,6 @@
 // pages/shoppingcart/shoppingcart.js
+import axios from '../../utils/http'
+const app = getApp()
 Page({
 
   /**
@@ -24,8 +26,8 @@ Page({
           dataList: res.data,
           goods_no: res.data[0].goods_no,
           quantum: res.data[0].quantum,
-          price: res.data[0].price * 100,
-          totalPrice: res.data[0].quantum * res.data[0].price * 100
+          price: res.data[0].price,
+          totalPrice: res.data[0].quantum * res.data[0].price
         })
       }
     })
@@ -36,7 +38,7 @@ Page({
     let _this = this
     this.setData({
       quantum: e.detail,
-      totalPrice: e.detail * e.currentTarget.dataset.price * 100
+      totalPrice: e.detail * e.currentTarget.dataset.price
     })
 
   },
@@ -47,11 +49,11 @@ Page({
       goods_no: e.detail.value
     })
     this.data.dataList.map((item, index) => {
-      if(item.goods_no === e.detail.value){
+      if (item.goods_no === e.detail.value) {
         _this.setData({
           quantum: item.quantum,
           price: item.price,
-          totalPrice: item.price * item.quantum * 100,
+          totalPrice: item.price * item.quantum,
         })
       }
     })
@@ -97,11 +99,44 @@ Page({
 
   },
 
-  onSubmit(){
+  onSubmit(e) {
     let _this = this
-    wx.redirectTo({
-      url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+
+    wx.getStorage({
+      key: 'token',
+      success: (res) => {
+        console.log('已经登录了')
+        wx.redirectTo({
+          url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+        })
+      },
+      fail: () => {
+        console.log('还没有登录')
+        wx.login({
+          success: codeRes => {
+            console.log(codeRes)
+            if (codeRes.code) {
+              axios.post('/wxc/wx/mini_login', {
+                code: codeRes.code,
+                iv: e.detail.iv,
+                data: e.detail.encryptedData
+              }).then(res => {
+                if (res.code === 200) {
+                  wx.setStorageSync('token', res.data.token)
+                  wx.setStorageSync('client_id', res.data.client_id)
+                  app.globalData.token = res.data.token
+                  app.globalData.client_id = res.data.client_id
+                  wx.redirectTo({
+                    url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+                  })
+                }
+              })
+            }
+          }
+        })
+      }
     })
+
   },
 
   /**

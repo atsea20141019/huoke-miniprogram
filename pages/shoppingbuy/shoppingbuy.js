@@ -11,7 +11,10 @@ Page({
     num: 1,
     price: 0,
     imgUrls: '',
-    address: null
+    address: null,
+
+    show: false,
+    addressList: []
   },
 
   /**
@@ -38,11 +41,39 @@ Page({
       })
     })
   },
-  selectAddress() {
+  showPopup() {
+    let _this = this
+    axios.post('/wxc/address/lists', {
+      count: 1000
+    }).then(res => {
+      console.log(res.data)
+      _this.setData({
+        addressList: res.data.list
+      })
+    })
+    this.setData({
+      show: true
+    })
+  },
+  onClose(){
+    this.setData({
+      show: false
+    })
+  },
+  selectAddress2() {
     let url = app.globalData.webViewUrl + '/my/address?token=' + wx.getStorageSync('token')
     // let url = 'http://192.168.0.5:8080/#/my/address?token='+wx.getStorageSync('token') + '&page=shoppingbuy&num=' + this.data.num 
     wx.navigateTo({
       url: '../webview/webview?url=' + encodeURIComponent(url)
+    })
+  },
+  selectAddress(e){
+    console.log(e)
+    this.setData({
+      address: e.currentTarget.dataset.add
+    })
+    this.setData({
+      show: false
     })
   },
   getGoodsDetail(goods_no) {
@@ -74,7 +105,7 @@ Page({
       address_id: this.data.address.address_id
     }).then(res => {
       console.log(res)
-      if(res.code !== 200){
+      if (res.code !== 200) {
         wx.showModal({
           content: res.msg,
           showCancel: false

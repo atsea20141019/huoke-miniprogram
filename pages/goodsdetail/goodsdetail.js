@@ -53,7 +53,7 @@ Page({
           goods_no: e.currentTarget.dataset.goods_no,
           goods_name: e.currentTarget.dataset.goods_name,
           imgUrls: e.currentTarget.dataset.imgurls,
-          price: e.currentTarget.dataset.price,
+          price: e.currentTarget.dataset.price * 100,
           quantum: 1
         }
 
@@ -87,7 +87,7 @@ Page({
             goods_no: e.currentTarget.dataset.goods_no,
             goods_name: e.currentTarget.dataset.goods_name,
             imgUrls: e.currentTarget.dataset.imgurls,
-            price: e.currentTarget.dataset.price,
+            price: e.currentTarget.dataset.price * 100,
             quantum: 1
           }],
           success() {
@@ -149,12 +149,48 @@ Page({
   },
 
   butGoods(e) {
-    if (!wx.getStorageSync('token')) {
-      login(e)
-    }
-    wx.navigateTo({
-      url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no + '&quantum=1'
+    wx.getStorage({
+      key: 'token',
+      success: (res) => {
+        console.log('已经登录了')
+        wx.navigateTo({
+          url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no + '&quantum=1'
+        })
+      },
+      fail: () => {
+        console.log('还没有登录')
+        wx.login({
+          success: codeRes => {
+            console.log(codeRes)
+            if (codeRes.code) {
+              axios.post('/wxc/wx/mini_login', {
+                code: codeRes.code,
+                iv: e.detail.iv,
+                data: e.detail.encryptedData
+              }).then(res => {
+                if (res.code === 200) {
+                  wx.setStorageSync('token', res.data.token)
+                  wx.setStorageSync('client_id', res.data.client_id)
+                  app.globalData.token = res.data.token
+                  app.globalData.client_id = res.data.client_id
+                  wx.navigateTo({
+                    url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no + '&quantum=1'
+                  })
+                }
+              })
+            }
+          }
+        })
+      }
     })
+
+
+    // if (!wx.getStorageSync('token')) {
+    //   login(e)
+    // }
+    // wx.navigateTo({
+    //   url: '../shoppingbuy/shoppingbuy?goods_no=' + e.currentTarget.dataset.goods_no + '&quantum=1'
+    // })
   },
 
   /**

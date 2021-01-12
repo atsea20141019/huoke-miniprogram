@@ -1,10 +1,19 @@
 page {
   background-color: #f0f0f0;
 }
+.top-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+.order-list {
+  padding-top: 54px;
+}
 .order-list .item {
   padding: 20rpx;
   background-color: #fff;
-  margin-bottom: 30rpx;
+  margin-bottom: 20rpx;
 }
 .order-list .item .head {
   font-size: 24rpx;
@@ -29,7 +38,8 @@ page {
   margin-bottom: 10rpx;
 }
 .order-list .item .main .body .name .txt {
-  font-size: 28rpx;
+  font-size: 24rpx;
+  padding-right: 40rpx;
   flex: 1;
 }
 .order-list .item .main .body .name .num {
@@ -48,9 +58,10 @@ page {
 .order-list .item .main .body .price-box .price {
   flex: 1;
   font-weight: 600;
+  color: #ee0a24;
 }
 .order-list .item .main .body .price-box .status {
-  color: #f00;
+  color: #ee0a24;
 }
 .order-list .item .btns {
   padding-top: 30rpx;

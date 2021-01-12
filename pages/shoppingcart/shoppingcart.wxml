@@ -7,8 +7,9 @@
         <view class="name">{{item.goods_name}}</view>
         <view class="desc"></view>
         <view class="line">
-          <view class="price">￥{{item.price}}</view>
-          <van-stepper label="购买数量" value="{{ item.quantum }}" bind:change="onChangeNum" data-price="{{item.price}}" data-goods_no="{{item.goods_name}}" disabled="{{item.goods_no != goods_no}}" />
+          <view class="price">￥{{item.price / 100}}</view>
+          <van-stepper label="购买数量" value="{{ item.quantum }}" bind:change="onChangeNum" data-price="{{item.price}}"
+            data-goods_no="{{item.goods_name}}" disabled="{{item.goods_no != goods_no}}" />
         </view>
       </view>
     </view>
@@ -18,8 +19,14 @@
     购物车为空
   </div>
 
-  <van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bind:submit="onSubmit">
+  <view class="submit-bar">
+    <van-button round plain type="info" size="mini" color="#ee0a24" bind:click="deleteItem" class="del">删除</van-button>
+    <view class="heji">合计： <text class="total-price">￥{{ totalPrice / 100 }}</text></view>
+    <van-button round type="info" color="#ee0a24" bindgetuserinfo="onSubmit" open-type="getUserInfo">提交订单</van-button>
+  </view>
+
+  <!-- <van-submit-bar price="{{ totalPrice }}" button-text="提交订单" bindgetuserinfo="onSubmit" open-type="getUserInfo">
     <van-button round plain type="info" size="mini" color="#ee0a24" bind:click="deleteItem">删除</van-button>
-  </van-submit-bar>
+  </van-submit-bar> -->
 
 </view>
