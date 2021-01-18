@@ -10,7 +10,7 @@
   <view class="order-list">
 
     <view class="item" wx:for="{{orderList}}" wx:key="unique">
-      <view class="head">订单编号：{{item.goods_no}}</view>
+      <view class="head">订单编号：{{item.order_no}}</view>
       <view class="main">
         <image class="pic" src="{{func.getCoverImg(item)}}">
         </image>

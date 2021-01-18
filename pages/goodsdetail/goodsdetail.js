@@ -114,9 +114,9 @@ Page({
   onLoad: function (options) {
     let _this = this
     this.getGoodsDetail(options.goods_no)
-    if(options.relation_id){
+    if (options.relation_id) {
       wx.setStorageSync('relation_id', options.relation_id)
-    }else{
+    } else {
       wx.clearStorageSync()
     }
 
@@ -149,6 +149,10 @@ Page({
       })
       this.setData({
         goodsDetail: res.data
+      })
+      let str = 'goodsDetail.content'
+      this.setData({
+        [str]: res.data.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" ')
       })
     })
   },

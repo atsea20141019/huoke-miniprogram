@@ -82,7 +82,7 @@
         {
           "name": "pages/goodsdetail/goodsdetail",
           "pathName": "pages/goodsdetail/goodsdetail",
-          "query": "goods_no=SP0000000002&relation_id=abcde",
+          "query": "goods_no=SP0000000005",
           "scene": null
         },
         {

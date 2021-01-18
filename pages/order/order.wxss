@@ -32,6 +32,7 @@ page {
   flex: 1;
   display: flex;
   flex-direction: column;
+  padding-left: 20rpx;
 }
 .order-list .item .main .body .name {
   display: flex;

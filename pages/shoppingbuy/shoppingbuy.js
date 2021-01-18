@@ -104,7 +104,7 @@ Page({
       goods_no: this.data.goodsDetail.goods_no,
       quantum: this.data.num,
       address_id: this.data.address.address_id,
-      relation_id: relation_id
+      relation_id: Number(relation_id)
     }).then(res => {
       console.log(res)
       if (res.code !== 200) {

@@ -1,7 +1,4 @@
 import axios from '../../utils/http'
-import {
-  login
-} from '../../utils/login'
 const app = getApp()
 Page({
 
@@ -18,48 +15,59 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (e) {
-    if (wx.getStorageSync('token')) {
-      this.setData({
-        notlogin: false,
-        wechat_avatar: wx.getStorageSync('wechat_avatar'),
-        wechat_nickname: wx.getStorageSync('wechat_nickname')
-      })
-    }
+    let _this = this
+    wx.getStorage({
+      key: 'token',
+      success(res) {
+        _this.setData({
+          notlogin: false
+        })
+      }
+    })
+
+    // if (wx.getStorageSync('token')) {
+    //   this.setData({
+    //     notlogin: false,
+    //     wechat_avatar: wx.getStorageSync('wechat_avatar'),
+    //     wechat_nickname: wx.getStorageSync('wechat_nickname')
+    //   })
+    // }
 
   },
 
   bindGetUserInfo(e) {
     let _this = this
-    login(e)
-    this.setData({
-      notlogin: true
+    wx.login({
+      success: codeRes => {
+        if (codeRes.code) {
+          axios.post('/wxc/wx/mini_login', {
+            code: codeRes.code,
+            iv: e.detail.iv,
+            data: e.detail.encryptedData
+          }).then(res => {
+            if (res.code === 200) {
+              wx.setStorageSync('token', res.data.token)
+              wx.setStorageSync('client_id', res.data.client_id)
+              wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
+              wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
+              app.globalData.token = res.data.token
+              app.globalData.client_id = res.data.client_id
+
+              _this.setData({
+                notlogin: false
+              })
+
+            }
+          })
+        }
+      }
     })
 
-    // app.globalData.userInfo = e.detail.userInfo
-    // wx.login({
-    //   success: codeRes => {
-    //     console.log(codeRes)
-    //     axios.post('/wxc/wx/mini_login', {
-    //       code: codeRes.code,
-    //       iv: e.detail.iv,
-    //       data: e.detail.encryptedData
-    //     }).then(res => {
-    //       wx.setStorageSync('token', res.data.token)
-    //       wx.setStorageSync('client_id', res.data.client_id)
-    //       app.globalData.token = res.data.token
-    //       app.globalData.client_id = res.data.client_id
-    //       _this.setData({
-    //         token: res.data.token
-    //       })
-    //       console.log(app.globalData)
-    //     })
-    //   }
-    // })
   },
 
   toUrl(url) {
     wx.navigateTo({
-      url: '/pages/webview/webview?url=' + encodeURIComponent(url) 
+      url: '/pages/webview/webview?url=' + encodeURIComponent(url)
     })
   },
 

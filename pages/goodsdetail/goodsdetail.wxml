@@ -15,7 +15,7 @@
     <view class="original_price">￥<text>{{goodsDetail.origin_price/100}}</text> </view>
     <text class="number">月销：{{goodsDetail.month_sale_volume}}</text>
   </view>
-  <rich-text class="detail">{{goodsDetail.content}}</rich-text>
+  <rich-text class="detail" nodes="{{goodsDetail.content}}"></rich-text>
   <van-goods-action>
     <van-goods-action-icon icon="cart-o" text="购物车" info="{{cartNum}}" bind:click="onClick_gwc" />
     <van-goods-action-button text="加入购物车" type="warning" bind:click="addCart" class="jr_gwc"

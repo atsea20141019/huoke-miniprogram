@@ -14,11 +14,11 @@
   </van-grid>
 </view>
 
-<!-- <van-overlay show="{{ notlogin }}">
+<van-overlay show="{{ notlogin }}">
   <div class="box">
     <div class="title">微信授权</div>
     <div class="desc">此页面是微信授权页面，点击下方按钮弹出授权或跳转页面</div>
 
     <van-button plain type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</van-button>
   </div>
-</van-overlay> -->
+</van-overlay>

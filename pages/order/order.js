@@ -63,7 +63,7 @@ Page({
 
   topPay(e) {
     let _this = this
-    // console.log(e.currentTarget.dataset.info)
+    console.log(e.currentTarget.dataset.info)
     let info = e.currentTarget.dataset.info
     axios.post('/wxc/order/wx_pay', {
       order_no: info.order_no
