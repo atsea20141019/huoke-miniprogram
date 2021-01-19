@@ -23,6 +23,7 @@
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -35,12 +36,11 @@
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "useApiHostProcess": false
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.1",
-  "appid": "wx7e2563c76ac04991",
+  "appid": "wx4b0a3f164522bfa1",
   "projectname": "huoke",
   "debugOptions": {
     "hidedInDevtools": []
@@ -64,7 +64,7 @@
         {
           "name": "pages/card/card",
           "pathName": "pages/card/card",
-          "query": "seller_id= 196526030",
+          "query": "",
           "scene": null
         },
         {

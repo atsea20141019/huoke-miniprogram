@@ -13,31 +13,13 @@
   height: 40rpx;
   margin-right: 10rpx;
 }
-.recommendbox .con {
-  font-size: 30rpx;
-  color: #606060;
-  margin-bottom: 30rpx;
-  padding: 0 0 0 20rpx;
-  width: 730rpx;
-  display: flex;
-  flex-wrap: wrap;
-}
-.recommendbox .con .col {
-  width: 345rpx;
-  margin-right: 20rpx;
-}
-.recommendbox .con .col image {
-  width: 100%;
-}
-.recommendbox .con .col text {
-  height: 70rpx;
-  line-height: 50rpx;
-  display: block;
-  text-align: center;
-  font-size: 26rpx;
-  max-width: 345rpx;
+.name {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.55);
   text-overflow: ellipsis;
-  white-space: nowrap;
   overflow: hidden;
-  clear: both;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-top: 5px;
 }
