@@ -8,7 +8,8 @@ Page({
   data: {
     src: '',
     notlogin: true,
-    wechat_avatar: ''
+    wechat_avatar: '',
+    card_status: 2
   },
 
   /**
@@ -25,6 +26,15 @@ Page({
       }
     })
 
+    wx.getStorage({
+      key: 'card_status',
+      success(res){
+        _this.setData({
+          card_status: res.data
+        })
+      }
+    })
+
     // if (wx.getStorageSync('token')) {
     //   this.setData({
     //     notlogin: false,
@@ -36,6 +46,7 @@ Page({
   },
 
   bindGetUserInfo(e) {
+    console.log(e)
     let _this = this
     wx.login({
       success: codeRes => {
@@ -50,11 +61,16 @@ Page({
               wx.setStorageSync('client_id', res.data.client_id)
               wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
               wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
+              wx.setStorageSync('card_status', res.data.card_status)
               app.globalData.token = res.data.token
               app.globalData.client_id = res.data.client_id
 
               _this.setData({
                 notlogin: false
+              })
+
+              _this.setData({
+                card_status: res.data.card_status
               })
 
             }

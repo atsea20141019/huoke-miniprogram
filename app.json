@@ -73,6 +73,8 @@
     "van-cell-group": "@vant/weapp/cell-group/index",
     "van-radio": "@vant/weapp/radio/index",
     "van-image": "@vant/weapp/image/index",
+    "van-area": "@vant/weapp/area/index",
+    "van-switch": "@vant/weapp/switch/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
     "van-tabbar-item": "@vant/weapp/tabbar-item/index",
     "van-submit-bar": "@vant/weapp/submit-bar/index"

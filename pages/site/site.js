@@ -12,7 +12,7 @@ Page({
    */
   onLoad: function (e) {
     this.setData({
-      src: decodeURIComponent('https://jue.sh')
+      src: decodeURIComponent('https://www.zhonghecar.com')
     })
   },
 

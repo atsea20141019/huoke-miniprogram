@@ -37,5 +37,5 @@
   <company-link image-logo="{{cardInfo.company_card_cfg.logo}}" company-name="{{cardInfo.company_card_cfg.name}}"></company-link>
   <play-video card-info="{{cardInfo}}"></play-video>
   <goods-list card-info="{{cardInfo}}"></goods-list>
-  <pics-list coverImg="{{coverImgs}}" wx:if="{{coverImgs.length > 0}}"></pics-list>
+  <pics-list coverImg="{{coverImgs}}" wx:if="{{coverImgs[0]}}"></pics-list>
 </div>

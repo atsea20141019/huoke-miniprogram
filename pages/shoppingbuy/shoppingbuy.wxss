@@ -24,3 +24,6 @@ page {
   background-color: #1989fa;
   border: 1px solid #1989fa;
 }
+.add-btn {
+  padding: 40rpx;
+}

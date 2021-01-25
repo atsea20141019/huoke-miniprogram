@@ -15,8 +15,9 @@ App({
     userInfo: null,
     token: null,
     client_id: null,
-    webViewUrl: 'https://wechat.hk.jue.sh/#',
+    webViewUrl: 'https://wechat.hk.zhongheinfo.com/#',
     dataBase: {},
-    address: {}
+    address: {},
+    card_status: 2
   }
 })

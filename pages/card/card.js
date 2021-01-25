@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     if (options.seller_id) {
       this.setData({
-        seller_id: Number(options.seller_id) 
+        seller_id: Number(options.seller_id)
       })
     } else {
       this.setData({
@@ -28,7 +28,7 @@ Page({
     this.getCardInfo()
   },
 
-  callPone(e){
+  callPone(e) {
     wx.makePhoneCall({
       phoneNumber: e.currentTarget.dataset.phonenumber
     })
@@ -38,6 +38,7 @@ Page({
     axios.post('/wxc/index/card_page', {
       seller_id: this.data.seller_id
     }).then(res => {
+      wx.setStorageSync('website', res.data.company_card_cfg.website)
       this.setData({
         cardInfo: res.data,
         coverImgs: res.data.client_card_cfg.cover_img.split('|')
