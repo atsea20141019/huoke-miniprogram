@@ -94,7 +94,7 @@
         {
           "name": "pages/shoppingbuy/shoppingbuy",
           "pathName": "pages/shoppingbuy/shoppingbuy",
-          "query": "goods_no=SP0000000003&quantum=2",
+          "query": "goods_no=SP0000000004&quantum=1",
           "scene": null
         },
         {

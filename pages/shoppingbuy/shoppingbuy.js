@@ -12,7 +12,7 @@ Page({
     num: 1,
     price: 0,
     imgUrls: '',
-    address_one: null,
+    address_one: {},
 
     addressList: [],
 
@@ -56,11 +56,12 @@ Page({
       //   [address.address]: res.data.list[0].address
       // })
 
-      // console.log(res.data.list[0])
-
-      _this.setData({
-        address_one: res.data.list[0]
-      })
+      if(res.data.list[0] !== undefined){
+        _this.setData({
+          address_one: res.data.list[0]
+        })
+      }
+      
 
     })
   },
@@ -69,7 +70,6 @@ Page({
     axios.post('/wxc/address/lists', {
       count: 1000
     }).then(res => {
-      console.log(res.data)
       _this.setData({
         addressList: res.data.list
       })
@@ -122,11 +122,12 @@ Page({
   },
 
   onSubmit() {
-    let relation_id = wx.getStorageSync('relation_id')
+    let _this = this
+    console.log(_this.data)
     axios.post('/wxc/order/create', {
-      goods_no: this.data.goodsDetail.goods_no,
-      quantum: this.data.num,
-      address_id: this.data.address_one.address_id
+      goods_no: _this.data.goodsDetail.goods_no,
+      quantum: _this.data.num,
+      address_id: _this.data.address_one.address_id || 0
     }).then(res => {
       console.log(res)
       if (res.code !== 200) {
