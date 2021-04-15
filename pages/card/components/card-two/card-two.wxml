@@ -12,8 +12,8 @@
     <view class="line">
       <view class="tel"><van-icon name="jue-call-fill" /> <text
           class="txt">{{cardInfo.mobile}}</text></view>
-      <view class="mail"><van-icon name="jue-mail-fill" /> <text
-          class="txt">{{cardInfo.client_card_cfg.email}}</text></view>
+      <view class="mail"><van-icon name="jue-wechat" /> <text
+          class="txt">{{cardInfo.client_card_cfg.wechat}}</text></view>
     </view>
     <view class="address"><van-icon name="jue-location" /> <text
         class="txt">{{cardInfo.company_card_cfg.address}}</text></view>

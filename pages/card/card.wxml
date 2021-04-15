@@ -17,10 +17,10 @@
       <view><text class="iconfont van-icon-jue-wechat"></text>微信</view>
       <text>{{cardInfo.client_card_cfg.wechat}}</text>
     </view>
-    <view class="col">
+    <!-- <view class="col">
       <view><text class="iconfont van-icon-jue-mail"></text>邮箱</view>
       <text>{{cardInfo.client_card_cfg.email}}</text>
-    </view>
+    </view> -->
   </scroll-view>
 
   <share-btn card-info="{{cardInfo}}"></share-btn>
