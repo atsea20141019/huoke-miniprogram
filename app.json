@@ -11,7 +11,9 @@
     "pages/shoppingcart/shoppingcart",
     "pages/shoppingbuy/shoppingbuy",
     "pages/order/order",
-    "pages/qrcode/qrcode"
+    "pages/qrcode/qrcode",
+    "pages/media/list/list",
+    "pages/media/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,12 +55,14 @@
   "usingComponents": {
     "van-button": "@vant/weapp/button/index",
     "van-icon": "@vant/weapp/icon/index",
+    "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
     "van-field": "@vant/weapp/field/index",
     "van-goods-action": "@vant/weapp/goods-action/index",
     "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
     "van-goods-action-button": "@vant/weapp/goods-action-button/index",
     "van-popup": "@vant/weapp/popup/index",
+    "van-tag": "@vant/weapp/tag/index",
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-checkbox": "@vant/weapp/checkbox/index",

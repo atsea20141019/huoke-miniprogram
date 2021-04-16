@@ -1,0 +1,7 @@
+<van-row gutter="10">
+  <van-col span="8" wx:for="{{imgsArr}}" wx:key="index">
+    <view class="item2">
+      <image class="img" mode="aspectFill" src="{{item}}" bindtap='previewImg' data-src="{{item}}" />
+    </view>
+  </van-col>
+</van-row>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "动态列表",
+  "usingComponents": {
+    "PicGrid": "./components/PicGrid/PicGrid"
+  }
+}

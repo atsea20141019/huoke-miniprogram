@@ -1,0 +1,71 @@
+{
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/card/card",
+          "pathName": "pages/card/card",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/my/my",
+          "pathName": "pages/my/my",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shop/shop",
+          "pathName": "pages/shop/shop",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/goodsdetail/goodsdetail",
+          "pathName": "pages/goodsdetail/goodsdetail",
+          "query": "goods_no=SP0000000005",
+          "scene": null
+        },
+        {
+          "name": "pages/shoppingcart/shoppingcart",
+          "pathName": "pages/shoppingcart/shoppingcart",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/shoppingbuy/shoppingbuy",
+          "pathName": "pages/shoppingbuy/shoppingbuy",
+          "query": "goods_no=SP0000000004&quantum=1",
+          "scene": null
+        },
+        {
+          "name": "pages/address/address",
+          "pathName": "pages/address/address",
+          "query": "goods_no=SP0000000002",
+          "scene": null
+        },
+        {
+          "name": "pages/order/order",
+          "pathName": "pages/order/order",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/media/list/list",
+          "pathName": "pages/media/list/list",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

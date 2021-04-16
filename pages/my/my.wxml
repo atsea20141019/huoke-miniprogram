@@ -9,7 +9,8 @@
     <van-grid-item text="我的活动" icon="description" bind:click="toWebView" data-url="/my/act"></van-grid-item>
     <van-grid-item text="我的地址" icon="aim" bind:click="toWebView" data-url="/my/address"></van-grid-item>
     <van-grid-item text="我的拥金" icon="balance-o" bind:click="toWebView" data-url="/cash/list"></van-grid-item>
-    <van-grid-item text="我要推广" icon="newspaper-o" bind:click="toWebView" data-url="/media/list"></van-grid-item>
+    <van-grid-item text="动态活动" icon="newspaper-o" url="/pages/media/list/list"></van-grid-item>
+    <!-- <van-grid-item text="动态活动" open-type="getUserInfo" bindgetuserinfo="toMediaList" icon="newspaper-o"></van-grid-item> -->
     <van-grid-item wx:if="{{card_status === 1}}" text="更新名片" icon="description" bind:click="toWebView" data-url="/my/cardedit"></van-grid-item>
   </van-grid>
 </view>

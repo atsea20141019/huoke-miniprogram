@@ -1,0 +1,35 @@
+.app-container {
+  background-color: #fafafa;
+}
+.items {
+  padding: 10px 15px;
+}
+.items .item {
+  border-bottom: 1px solid #ebedf0;
+  padding: 10px 0;
+}
+.items .item:last-child {
+  border: none;
+}
+.items .item .title {
+  font-size: 16px;
+  color: #121921;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.items .item .title .tag {
+  position: relative;
+  top: -2px;
+}
+.items .item .desc {
+  font-size: 14px;
+  color: #6d7383;
+  margin-bottom: 15px;
+}
+.items .item .video-box {
+  display: flex;
+}
+.items .item .video-box .main {
+  flex: 1;
+  padding-right: 15px;
+}

@@ -1,0 +1,38 @@
+<view class="app-container">
+  <view class="items">
+    <view class="item" wx:for="{{dataList}}" wx:key="index" data-id='{{item.article_id}}'>
+      <view wx:if="{{item.type === 1}}">
+        <view class="title">{{ item.title }}</view>
+        <view class="desc">
+          {{ item.desc }}
+        </view>
+      </view>
+
+      <view wx:if="{{item.type === 2}}">
+        <view class="title">{{ item.title }}</view>
+        <view class="desc">{{ item.desc }}</view>
+        <PicGrid cover_img="{{item.cover_img}}" />
+      </view>
+
+      <view wx:if="{{item.type === 3}}">
+        <view class="video-box">
+          <view class="main">
+            <view class="title">
+              <van-tag class="tag" plain type="primary">视频</van-tag>
+              {{ item.title }}
+            </view>
+            <view class="desc">
+              {{ item.desc }}
+            </view>
+          </view>
+          <van-image fit="contain" width="100" height="100"
+            src="https://img13.360buyimg.com/ddimg/jfs/t1/158292/8/987/2605/5fee4fe4E14a73fe3/75bd0ecf0141afcd.png"
+            class="img" />
+        </view>
+
+      </view>
+
+
+    </view>
+  </view>
+</view>
