@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Analytics": "../components/analytics/analytics",
+    "Head": "../components/head/head",
+    "Act": "../components/act/act",
+    "PicGrid": "../list/components/PicGrid/PicGrid"
+  }
+}

@@ -1,0 +1,13 @@
+<view class="act-box">
+  <view class="is-join" wx:if="{{dataList.join_status === 0}}">
+    <van-button type="info" block open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">参与活动</van-button>
+  </view>
+
+
+  <view class="is-join" wx:if="{{dataList.join_status === 1}}">
+    <van-button type="info" block disabled>你已经参加了该活动，请到店确认</van-button>
+  </view>
+  <view class="is-join" wx:if="{{dataList.join_status === 2}}">
+    <van-button type="info" block disabled color="#7232dd">你已经参加了该活动，已确认到店</van-button>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="analytics">
+  <text class="info">{{view_count}} 阅读</text> ·
+  <text class="info">{{forward_count}} 分享</text>
+</view>

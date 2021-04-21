@@ -13,7 +13,9 @@
     "pages/order/order",
     "pages/qrcode/qrcode",
     "pages/media/list/list",
-    "pages/media/detail/detail"
+    "pages/media/article/article",
+    "pages/media/picture/picture",
+    "pages/media/video/video"
   ],
   "window": {
     "backgroundTextStyle": "light",

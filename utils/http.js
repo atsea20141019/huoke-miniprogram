@@ -1,3 +1,4 @@
+import {siteConfig} from './config'
 class Axios {
   post(url, data, formType) {
     return this.request("POST", url, data, formType)
@@ -17,12 +18,14 @@ class Axios {
   request(method, url, data, formType) {
     return new Promise((resolve, reject) => {
       var comtentType = formType ? 'application/x-www-form-urlencoded' : 'application/json'
+
       wx.request({
         url: "https://api.hk.zhongheinfo.com" + url,
         method: method,
         data: data,
         header: {
           "content-type": comtentType,
+          "site": siteConfig()[wx.getAccountInfoSync().miniProgram.appId].site,
           "client-token": wx.getStorageSync('token')
         },
         success(res) {

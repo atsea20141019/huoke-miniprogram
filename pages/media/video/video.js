@@ -1,4 +1,4 @@
-// pages/media/detail/detail.js
+// pages/media/video/video.js
 Page({
 
   /**

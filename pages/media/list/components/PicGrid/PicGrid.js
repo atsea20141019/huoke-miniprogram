@@ -17,17 +17,29 @@ Component({
     imgsArr: []
   },
 
+  observers: {
+    'cover_img': function (val) {
+      if (val) {
+        this.setImgsArr(val)
+      }
+
+    }
+  },
+
   ready() {
-    let tmpArr = this.data.cover_img.split('|')
-    this.setData({
-      imgsArr: tmpArr
-    })
+    this.setImgsArr(this.data.cover_img)
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    setImgsArr(val) {
+      this.setData({
+        imgsArr: val.split('|')
+      })
+    },
+
     previewImg(e) {
       let imgsArr = this.data.imgsArr
       wx.previewImage({

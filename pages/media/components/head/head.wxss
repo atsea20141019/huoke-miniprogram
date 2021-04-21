@@ -1,0 +1,14 @@
+.title {
+  font-size: 22px;
+  line-height: 1.4;
+  margin-bottom: 14px;
+  font-weight: 400;
+}
+.meta-content {
+  margin-bottom: 22px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.55);
+}
+.meta-content span {
+  margin-right: 10px;
+}

@@ -1,0 +1,7 @@
+<view class="head">
+  <view class="title">{{ title }}</view>
+  <view class="meta-content">
+    <span class="name">苏州众和</span>
+    <span class="time">{{ created_at }}</span>
+  </view>
+</view>

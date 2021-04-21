@@ -1,7 +1,6 @@
 import axios from './http'
 const app = getApp()
 export function login(e) {
-  console.log(e)
   let _this = this
   app.globalData.userInfo = e.detail.userInfo
   wx.login({

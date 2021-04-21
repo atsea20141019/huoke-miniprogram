@@ -1,8 +1,10 @@
 //app.js
 import axios from './utils/http'
+import {siteConfig} from './utils/config'
+
 App({
   onLaunch: function () {
-    if(wx.getStorageSync('token')){
+    if (wx.getStorageSync('token')) {
       // console.log(wx.getStorageSync('token'))
     }
 
@@ -11,11 +13,15 @@ App({
       this.globalData.dataBase = res.data
     })
   },
+
+
+
   globalData: {
     userInfo: null,
+    site: siteConfig()[wx.getAccountInfoSync().miniProgram.appId].site,
     token: null,
     client_id: null,
-    webViewUrl: 'https://wechat.hk.zhongheinfo.com/#',
+    webViewUrl: siteConfig()[wx.getAccountInfoSync().miniProgram.appId].webViewUrl,
     dataBase: {},
     address: {},
     card_status: 2

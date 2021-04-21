@@ -1,20 +1,25 @@
 <view class="app-container">
   <view class="items">
     <view class="item" wx:for="{{dataList}}" wx:key="index" data-id='{{item.article_id}}'>
-      <view wx:if="{{item.type === 1}}">
+      <view wx:if="{{item.type === 1}}" bindtap="goToPage" data-page="/pages/media/article/article"
+        data-id="{{item.article_id}}">
         <view class="title">{{ item.title }}</view>
         <view class="desc">
           {{ item.desc }}
         </view>
+        <Analytics view_count="{{item.view_count}}" forward_count="{{item.forward_count}}" />
       </view>
 
-      <view wx:if="{{item.type === 2}}">
+      <view wx:if="{{item.type === 2}}" bindtap="goToPage" data-page="/pages/media/picture/picture"
+        data-id="{{item.article_id}}">
         <view class="title">{{ item.title }}</view>
         <view class="desc">{{ item.desc }}</view>
         <PicGrid cover_img="{{item.cover_img}}" />
+        <Analytics view_count="{{item.view_count}}" forward_count="{{item.forward_count}}" />
       </view>
 
-      <view wx:if="{{item.type === 3}}">
+      <view wx:if="{{item.type === 3}}" bindtap="goToPage" data-page="/pages/media/video/video"
+        data-id="{{item.article_id}}">
         <view class="video-box">
           <view class="main">
             <view class="title">
@@ -29,6 +34,7 @@
             src="https://img13.360buyimg.com/ddimg/jfs/t1/158292/8/987/2605/5fee4fe4E14a73fe3/75bd0ecf0141afcd.png"
             class="img" />
         </view>
+        <Analytics view_count="{{item.view_count}}" forward_count="{{item.forward_count}}" />
 
       </view>
 
