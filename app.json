@@ -2,7 +2,6 @@
   "pages": [
     "pages/card/card",
     "pages/webview/webview",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/site/site",
     "pages/my/my",

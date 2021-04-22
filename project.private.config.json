@@ -33,7 +33,7 @@
         {
           "name": "pages/goodsdetail/goodsdetail",
           "pathName": "pages/goodsdetail/goodsdetail",
-          "query": "goods_no=SP0000000005",
+          "query": "goods_no=SP0000000010",
           "scene": null
         },
         {
@@ -70,6 +70,12 @@
           "name": "pages/media/picture/picture",
           "pathName": "pages/media/picture/picture",
           "query": "id=32",
+          "scene": null
+        },
+        {
+          "name": "pages/media/article/article",
+          "pathName": "pages/media/article/article",
+          "query": "id=33",
           "scene": null
         }
       ]

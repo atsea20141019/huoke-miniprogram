@@ -100,6 +100,7 @@ Page({
   },
 
   onSubmit(e) {
+    console.log(e)
     let _this = this
 
     wx.getStorage({
@@ -112,28 +113,33 @@ Page({
       },
       fail: () => {
         console.log('还没有登录')
-        wx.login({
-          success: codeRes => {
-            console.log(codeRes)
-            if (codeRes.code) {
-              axios.post('/wxc/wx/mini_login', {
-                code: codeRes.code,
-                iv: e.detail.iv,
-                data: e.detail.encryptedData
-              }).then(res => {
-                if (res.code === 200) {
-                  wx.setStorageSync('token', res.data.token)
-                  wx.setStorageSync('client_id', res.data.client_id)
-                  wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
-                  wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
-                  app.globalData.token = res.data.token
-                  app.globalData.client_id = res.data.client_id
-                  wx.redirectTo({
-                    url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+        wx.getUserProfile({
+          desc: '业务需要',
+          success: res1 => {
+            wx.login({
+              success: codeRes => {
+                console.log(codeRes)
+                if (codeRes.code) {
+                  axios.post('/wxc/wx/mini_login', {
+                    code: codeRes.code,
+                    iv: e.detail.iv,
+                    data: e.detail.encryptedData
+                  }).then(res => {
+                    if (res.code === 200) {
+                      wx.setStorageSync('token', res.data.token)
+                      wx.setStorageSync('client_id', res.data.client_id)
+                      wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
+                      wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
+                      app.globalData.token = res.data.token
+                      app.globalData.client_id = res.data.client_id
+                      wx.redirectTo({
+                        url: '../shoppingbuy/shoppingbuy?goods_no=' + _this.data.goods_no + '&quantum=' + _this.data.quantum
+                      })
+                    }
                   })
                 }
-              })
-            }
+              }
+            })
           }
         })
       }

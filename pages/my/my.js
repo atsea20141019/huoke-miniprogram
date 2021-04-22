@@ -28,7 +28,7 @@ Page({
 
     wx.getStorage({
       key: 'card_status',
-      success(res){
+      success(res) {
         _this.setData({
           card_status: res.data
         })
@@ -45,39 +45,45 @@ Page({
 
   },
 
-  bindGetUserInfo(e) {
-    console.log(e)
+  getUserProfile(e) {
     let _this = this
-    wx.login({
-      success: codeRes => {
-        if (codeRes.code) {
-          axios.post('/wxc/wx/mini_login', {
-            code: codeRes.code,
-            iv: e.detail.iv,
-            data: e.detail.encryptedData
-          }).then(res => {
-            if (res.code === 200) {
-              wx.setStorageSync('token', res.data.token)
-              wx.setStorageSync('client_id', res.data.client_id)
-              wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
-              wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
-              wx.setStorageSync('card_status', res.data.card_status)
-              app.globalData.token = res.data.token
-              app.globalData.client_id = res.data.client_id
+    wx.getUserProfile({
+      desc: '业务需要',
+      success: res1 => {
+        wx.login({
+          success: codeRes => {
+            if (codeRes.code) {
+              axios.post('/wxc/wx/mini_login', {
+                code: codeRes.code,
+                iv: res1.iv,
+                data: res1.encryptedData
+              }).then(res => {
+                if (res.code === 200) {
+                  wx.setStorageSync('token', res.data.token)
+                  wx.setStorageSync('client_id', res.data.client_id)
+                  wx.setStorageSync('wechat_avatar', res.data.wechat_avatar)
+                  wx.setStorageSync('wechat_nickname', res.data.wechat_nickname)
+                  wx.setStorageSync('card_status', res.data.card_status)
+                  app.globalData.token = res.data.token
+                  app.globalData.client_id = res.data.client_id
 
-              _this.setData({
-                notlogin: false
+                  _this.setData({
+                    notlogin: false
+                  })
+
+                  _this.setData({
+                    card_status: res.data.card_status
+                  })
+
+                }
               })
-
-              _this.setData({
-                card_status: res.data.card_status
-              })
-
             }
-          })
-        }
+          }
+        })
       }
     })
+
+
 
   },
 

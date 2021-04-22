@@ -101,6 +101,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let _this = this
+    var shareObj = {
+      title: this.data.dataList.title,
+      path: '/pages/media/article/article?id=' + this.data.dataList.article_id + '&from_id=' + wx.getStorageSync('client_id') + '&relation_id=' + this.data.dataList.relation_id,
+      success: res => {
+        axios.post('/wxc/article/forward', {
+          article_id: _this.data.dataList.article_id,
+          relation_id: Number(_this.data.dataList.relation_id) || 0,
+          channel: 1
+        })
+      }
+    }
+    return shareObj
   }
 })

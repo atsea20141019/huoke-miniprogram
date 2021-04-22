@@ -20,7 +20,7 @@
     <van-goods-action-icon icon="cart-o" text="购物车" info="{{cartNum}}" bind:click="onClick_gwc" />
     <van-goods-action-button text="加入购物车" type="warning" bind:click="addCart" class="jr_gwc"
       data-goods_no="{{goodsDetail.goods_no}}" data-goods_name="{{goodsDetail.name}}" data-imgUrls="{{imgUrls[0]}}" data-price="{{goodsDetail.sale_price/100}}" />
-    <van-goods-action-button text="立即购买" open-type="getUserInfo" bindgetuserinfo="butGoods"
+    <van-goods-action-button text="立即购买" bindtap="butGoods"
       data-goods_no="{{goodsDetail.goods_no}}" class="ljgm" />
   </van-goods-action>
 </view>
