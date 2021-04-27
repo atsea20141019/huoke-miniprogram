@@ -15,7 +15,7 @@
         {
           "name": "pages/card/card",
           "pathName": "pages/card/card",
-          "query": "",
+          "query": "seller_id=2013739179",
           "scene": null
         },
         {
@@ -75,7 +75,7 @@
         {
           "name": "pages/media/article/article",
           "pathName": "pages/media/article/article",
-          "query": "id=33",
+          "query": "id=17",
           "scene": null
         }
       ]

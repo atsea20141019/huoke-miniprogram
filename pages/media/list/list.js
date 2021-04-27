@@ -6,7 +6,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList: []
+    dataList: [],
+    query: {
+      page: 1,
+      status: 1
+    },
+    isnext: false
   },
 
   /**
@@ -18,14 +23,25 @@ Page({
 
   //获取动态列表
   getDataList() {
-    axios.post('/wxc/article/lists').then(res => {
+    let _this = this
+    let dataList = this.data.dataList
+    axios.post('/wxc/article/lists', this.data.query).then(res => {
+      dataList = dataList.concat(res.data.list)
       this.setData({
-        dataList: res.data.list
+        dataList: dataList,
+        isnext: res.data.isnext
       })
+
+      if(res.data.isnext){
+        let str = 'query.page'
+        this.setData({
+          [str]: ++_this.data.query.page
+        })
+      }
     })
   },
 
-  goToPage(e){
+  goToPage(e) {
     wx.navigateTo({
       url: e.currentTarget.dataset.page + '?id=' + e.currentTarget.dataset.id
     })
@@ -70,7 +86,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    if(this.data.isnext){
+      this.getDataList()
+    }
+    
   },
 
   /**

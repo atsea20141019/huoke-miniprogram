@@ -1,3 +1,18 @@
+<block wx:if="{{dataList.goods_no}}">
+  <swiper indicator-dots="true" autoplay style="height: 500rpx; margin-bottom: 20px">
+    <swiper-item wx:for="{{coverImgArr}}" wx:key="*this">
+      <image class="img" src="{{item}}" mode="aspectFit"></image>
+    </swiper-item>
+  </swiper>
+  <van-cell-group>
+    <van-cell title="名称" value="{{goodsDetail.name}}" label="{{goodsDetail.desc}}" />
+    <van-cell title="价格">
+      <strong style="color: #ee0a24">￥{{ goodsDetail.sale_price / 100 }}</strong>
+    </van-cell>
+  </van-cell-group>
+
+</block>
+
 <view class="act-box">
   <view class="is-join" wx:if="{{dataList.join_status === 0}}">
     <van-button type="info" block open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">参与活动</van-button>

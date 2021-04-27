@@ -1,11 +1,11 @@
 <!--pages/card/components/card-one/card-one.wxml-->
 <view class="card card-1">
-  <image src="{{cardInfo.client_card_cfg.avatar}}" class="avatar"></image>
+  <image src="{{cardInfo.client_card_cfg.avatar}}" class="avatar" mode="aspectFill"></image>
   <view class="main">
     <view class="company">{{cardInfo.company_card_cfg.name}}</view>
     <view class="name">
       <text class="realname">{{cardInfo.realname}}</text>
-      <text class="pro">销售顾问</text>
+      <text class="pro">{{job_title}}</text>
     </view>
     <view class="tel">
       <van-icon name="jue-call-fill" />

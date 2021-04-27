@@ -16,7 +16,8 @@ Page({
    */
   onLoad: function (options) {
     let article_id = Number(options.id) || 0
-    this.getDataList(article_id)
+    let relation_id = Number(options.relation_id) || 0
+    this.getDataList(article_id, relation_id)
   },
 
   makeQRcode() {
@@ -29,9 +30,10 @@ Page({
     })
   },
 
-  getDataList(article_id) {
+  getDataList(article_id, relation_id) {
     axios.post('/wxc/article/detail', {
-      article_id: article_id
+      article_id: article_id,
+      relation_id: relation_id
     }).then(res => {
       this.setData({
         dataList: res.data

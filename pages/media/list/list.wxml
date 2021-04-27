@@ -18,7 +18,7 @@
         <Analytics view_count="{{item.view_count}}" forward_count="{{item.forward_count}}" />
       </view>
 
-      <view wx:if="{{item.type === 3}}" bindtap="goToPage" data-page="/pages/media/video/video"
+      <!-- <view wx:if="{{item.type === 3}}" bindtap="goToPage" data-page="/pages/media/video/video"
         data-id="{{item.article_id}}">
         <view class="video-box">
           <view class="main">
@@ -36,7 +36,7 @@
         </view>
         <Analytics view_count="{{item.view_count}}" forward_count="{{item.forward_count}}" />
 
-      </view>
+      </view> -->
 
 
     </view>

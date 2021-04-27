@@ -11,7 +11,6 @@
     <van-grid-item text="我的拥金" icon="balance-o" bind:click="toWebView" data-url="/cash/list"></van-grid-item>
     <van-grid-item text="动态活动" icon="newspaper-o" url="/pages/media/list/list"></van-grid-item>
     <van-grid-item wx:if="{{card_status === 1}}" text="更新名片" icon="description" bind:click="toWebView" data-url="/my/cardedit"></van-grid-item>
-    <van-grid-item text="测试" icon="orders-o" bindtap="getUserProfile"></van-grid-item>
   </van-grid>
 </view>
 

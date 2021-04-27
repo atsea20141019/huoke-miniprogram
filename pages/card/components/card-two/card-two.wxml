@@ -3,19 +3,19 @@
     <image src="{{cardInfo.company_card_cfg.background}}" class="img-tu" mode="aspectFill"></image>
   </view>
   <view class="main">
-    <image src="{{cardInfo.client_card_cfg.avatar}}" class="avatar"></image>
+    <image src="{{cardInfo.client_card_cfg.avatar}}" class="avatar" mode="aspectFill"></image>
     <view class="name">
       <text class="realname">{{cardInfo.realname}}</text>
-      <text class="pro">销售顾问</text>
+      <text class="pro">{{job_title}}</text>
     </view>
     <view class="company">{{cardInfo.company_card_cfg.name}}</view>
     <view class="line">
-      <view class="tel"><van-icon name="jue-call-fill" /> <text
-          class="txt">{{cardInfo.mobile}}</text></view>
-      <view class="mail"><van-icon name="jue-wechat" /> <text
-          class="txt">{{cardInfo.client_card_cfg.wechat}}</text></view>
+      <view class="tel">
+        <van-icon name="jue-call-fill" /> <text class="txt">{{cardInfo.mobile}}</text></view>
+      <view class="mail">
+        <van-icon name="jue-wechat" /> <text class="txt">{{cardInfo.client_card_cfg.wechat}}</text></view>
     </view>
-    <view class="address"><van-icon name="jue-location" /> <text
-        class="txt">{{cardInfo.company_card_cfg.address}}</text></view>
+    <view class="address">
+      <van-icon name="jue-location" /> <text class="txt">{{cardInfo.company_card_cfg.address}}</text></view>
   </view>
 </view>
