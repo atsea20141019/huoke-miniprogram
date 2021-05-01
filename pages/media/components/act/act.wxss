@@ -16,3 +16,35 @@
   margin: 0 auto;
   height: 500rpx;
 }
+
+.no-login {
+  position: absolute;
+  display: flex;
+  background: rgba(250, 250, 250, 1);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.box {
+  display: flex;
+  background-color: #fafafa;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 100rpx;
+  width: 100%;
+}
+.box .title {
+  font-size: 32rpx;
+  font-weight: 700;
+  margin-bottom: 50rpx;
+}
+.box .desc {
+  font-size: 24rpx;
+  color: rgba(0, 0, 0, 0.65);
+  margin-bottom: 60rpx;
+}

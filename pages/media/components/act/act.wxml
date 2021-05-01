@@ -26,3 +26,12 @@
     <van-button type="info" block disabled color="#7232dd">你已经参加了该活动，已确认到店</van-button>
   </view>
 </view>
+
+<view class="no-login" wx:if="{{notlogin}}">
+  <div class="box">
+    <div class="title">微信授权</div>
+    <div class="desc">该活动需要微信授权，点击下方按钮弹出授权</div>
+
+    <van-button plain type="primary" bindtap="getUserProfile">点击授权</van-button>
+  </div>
+</view>
