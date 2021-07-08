@@ -39,12 +39,6 @@
         "selectedIconPath": "/images/tabBar/shop.png"
       },
       {
-        "pagePath": "pages/site/site",
-        "text": "官网",
-        "iconPath": "/images/tabBar/site.png",
-        "selectedIconPath": "/images/tabBar/site.png"
-      },
-      {
         "pagePath": "pages/my/my",
         "text": "我的",
         "iconPath": "/images/tabBar/my.png",

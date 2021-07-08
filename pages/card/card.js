@@ -43,6 +43,7 @@ Page({
         cardInfo: res.data,
         coverImgs: res.data.client_card_cfg.cover_img.split('|')
       })
+
     })
   },
 

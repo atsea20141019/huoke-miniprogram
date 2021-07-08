@@ -9,6 +9,11 @@ export function siteConfig() {
       site: 'nbzhz',
       companyName: '宁波众致',
       webViewUrl: 'https://nbzhz.wechat.hk.zhongheinfo.com/#'
+    },
+    'wx94c6b67dee1e1225': {
+      site: 'zhdc',
+      companyName: '众和雪铁龙',
+      webViewUrl: 'https://zhdc.wechat.hk.zhongheinfo.com/#'
     }
   }
 }
